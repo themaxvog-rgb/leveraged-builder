@@ -17,7 +17,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Newsletter forms — Beehiiv API integration
+// Newsletter forms — Beehiiv integration
 const BEEHIIV_FORM_ID = '7c1ff333-b992-4838-ba28-81679d315c72';
 
 async function handleNewsletterSubmit(e) {
@@ -30,28 +30,20 @@ async function handleNewsletterSubmit(e) {
   btn.textContent = 'Joining...';
   btn.disabled = true;
 
-  const success = () => {
-    window.location.href = '/thank-you.html';
-  };
-
   try {
     const res = await fetch('https://subscribe-forms.beehiiv.com/v3/subscriptions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, form_id: BEEHIIV_FORM_ID })
     });
-    if (res.ok) {
-      success();
-    } else {
-      // Fallback: redirect to Beehiiv subscribe page
-      window.open('https://leveragedbuilder.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
-      success();
+    if (res.status >= 200 && res.status < 300) {
+      window.location.href = '/thank-you.html';
+      return;
     }
-  } catch {
-    // Fallback: redirect to Beehiiv subscribe page
-    window.open('https://leveragedbuilder.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
-    success();
-  }
+  } catch (_) {}
+
+  // Fallback: redirect to Beehiiv subscribe page (same tab, email pre-filled)
+  window.location.href = 'https://leveragedbuilder.beehiiv.com/subscribe?email=' + encodeURIComponent(email);
 }
 
 document.querySelectorAll('.newsletter-form-js').forEach(form => {
