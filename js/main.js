@@ -17,7 +17,23 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Newsletter forms handled by Beehiiv native embed (loader.js)
+// Newsletter forms — redirect to Beehiiv subscribe page
+function handleNewsletterSubmit(e) {
+  e.preventDefault();
+  const form = e.currentTarget;
+  const email = form.querySelector('input[type="email"]').value.trim();
+  if (!email) return;
+
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Redirecting...';
+  btn.disabled = true;
+
+  window.location.href = 'https://leveragedbuilder.beehiiv.com/subscribe?email=' + encodeURIComponent(email);
+}
+
+document.querySelectorAll('.newsletter-form-js, .cta-form').forEach(form => {
+  form.addEventListener('submit', handleNewsletterSubmit);
+});
 
 // Hamburger menu
 const hamburger = document.querySelector('.nav__hamburger');
