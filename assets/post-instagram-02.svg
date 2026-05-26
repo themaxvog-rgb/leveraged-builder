@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <rect width="1080" height="1080" fill="#0C0C0C"/>
+  <rect x="0" y="0" width="1080" height="4" fill="#D4FF00"/>
+  <rect x="0" y="1076" width="1080" height="4" fill="#D4FF00"/>
+  <rect x="80" y="80" width="3" height="920" fill="#D4FF00" opacity="0.2"/>
+
+  <!-- Eyebrow -->
+  <rect x="108" y="108" width="260" height="36" rx="4" fill="rgba(212,255,0,0.1)"/>
+  <text x="238" y="132" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#D4FF00" text-anchor="middle" letter-spacing="3">THE WORKFLOW</text>
+
+  <!-- Headline -->
+  <text x="108" y="230" font-family="Georgia, serif" font-weight="bold" font-size="68" fill="#F2F2EE" letter-spacing="-2">2.5 hours.</text>
+  <text x="108" y="310" font-family="Georgia, serif" font-weight="bold" font-size="44" fill="#888888">Full week of content.</text>
+
+  <rect x="108" y="350" width="864" height="1" fill="#242424"/>
+
+  <!-- Steps -->
+  <!-- Step 1 -->
+  <text x="108" y="420" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#D4FF00">01</text>
+  <text x="164" y="420" font-family="'Courier New', monospace" font-size="22" font-weight="bold" fill="#F2F2EE">Research brief</text>
+  <text x="164" y="448" font-family="'Courier New', monospace" font-size="17" fill="#555555">Perplexity → full topic brief in 20 min</text>
+
+  <!-- Step 2 -->
+  <text x="108" y="504" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#D4FF00">02</text>
+  <text x="164" y="504" font-family="'Courier New', monospace" font-size="22" font-weight="bold" fill="#F2F2EE">Write everything</text>
+  <text x="164" y="532" font-family="'Courier New', monospace" font-size="17" fill="#555555">Claude → article + newsletter + thread in 45 min</text>
+
+  <!-- Step 3 -->
+  <text x="108" y="588" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#D4FF00">03</text>
+  <text x="164" y="588" font-family="'Courier New', monospace" font-size="22" font-weight="bold" fill="#F2F2EE">AI narration</text>
+  <text x="164" y="616" font-family="'Courier New', monospace" font-size="17" fill="#555555">ElevenLabs → no mic, no studio, 15 min</text>
+
+  <!-- Step 4 -->
+  <text x="108" y="672" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#D4FF00">04</text>
+  <text x="164" y="672" font-family="'Courier New', monospace" font-size="22" font-weight="bold" fill="#F2F2EE">Edit the video</text>
+  <text x="164" y="700" font-family="'Courier New', monospace" font-size="17" fill="#555555">Descript → edit by editing text, 40 min</text>
+
+  <!-- Step 5 -->
+  <text x="108" y="756" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#D4FF00">05</text>
+  <text x="164" y="756" font-family="'Courier New', monospace" font-size="22" font-weight="bold" fill="#F2F2EE">Schedule everything</text>
+  <text x="164" y="784" font-family="'Courier New', monospace" font-size="17" fill="#555555">Buffer → 5 platforms queued, 20 min</text>
+
+  <rect x="108" y="824" width="864" height="1" fill="#242424"/>
+
+  <!-- Result box -->
+  <rect x="108" y="848" width="864" height="120" rx="12" fill="#141414" stroke="#242424" stroke-width="1"/>
+  <text x="540" y="898" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#888888" text-anchor="middle">One session per week.</text>
+  <text x="540" y="942" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#D4FF00" text-anchor="middle">Everything else runs automatically.</text>
+
+  <!-- Footer -->
+  <text x="108" y="1024" font-family="'Courier New', monospace" font-size="16" fill="#D4FF00" letter-spacing="1">leveragedbuilder.com</text>
+  <text x="972" y="1024" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#242424" text-anchor="end">LB</text>
+</svg>

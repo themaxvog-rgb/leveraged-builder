@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <rect width="1080" height="1080" fill="#0C0C0C"/>
+  <rect x="0" y="0" width="1080" height="4" fill="#D4FF00"/>
+  <rect x="0" y="1076" width="1080" height="4" fill="#D4FF00"/>
+  <rect x="80" y="80" width="3" height="920" fill="#D4FF00" opacity="0.2"/>
+
+  <!-- Eyebrow -->
+  <rect x="108" y="108" width="280" height="36" rx="4" fill="rgba(212,255,0,0.1)"/>
+  <text x="248" y="132" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#D4FF00" text-anchor="middle" letter-spacing="3">OPERATOR MINDSET</text>
+
+  <!-- Headline -->
+  <text x="108" y="240" font-family="Georgia, serif" font-weight="bold" font-size="62" fill="#F2F2EE" letter-spacing="-2">The ones winning</text>
+  <text x="108" y="312" font-family="Georgia, serif" font-weight="bold" font-size="62" fill="#F2F2EE" letter-spacing="-2">aren't working</text>
+  <text x="108" y="384" font-family="Georgia, serif" font-weight="bold" font-size="62" fill="#D4FF00" letter-spacing="-2">harder.</text>
+
+  <rect x="108" y="424" width="864" height="1" fill="#242424"/>
+
+  <!-- Contrasts -->
+  <!-- Row 1 -->
+  <rect x="108" y="452" width="400" height="80" rx="8" fill="#141414" stroke="#242424" stroke-width="1"/>
+  <text x="308" y="485" font-family="'Courier New', monospace" font-size="17" fill="#555555" text-anchor="middle">Using AI as a search engine</text>
+  <text x="308" y="514" font-family="Georgia, serif" font-size="13" fill="#333333" text-anchor="middle">❌ OLD PLAYBOOK</text>
+
+  <text x="556" y="498" font-family="'Courier New', monospace" font-size="28" font-weight="bold" fill="#D4FF00" text-anchor="middle">→</text>
+
+  <rect x="604" y="452" width="368" height="80" rx="8" fill="rgba(212,255,0,0.06)" stroke="rgba(212,255,0,0.2)" stroke-width="1"/>
+  <text x="788" y="485" font-family="'Courier New', monospace" font-size="17" fill="#F2F2EE" text-anchor="middle">AI as infrastructure</text>
+  <text x="788" y="514" font-family="Georgia, serif" font-size="13" fill="#D4FF00" text-anchor="middle">✓ NEW PLAYBOOK</text>
+
+  <!-- Row 2 -->
+  <rect x="108" y="548" width="400" height="80" rx="8" fill="#141414" stroke="#242424" stroke-width="1"/>
+  <text x="308" y="581" font-family="'Courier New', monospace" font-size="17" fill="#555555" text-anchor="middle">Creating content manually</text>
+  <text x="308" y="610" font-family="Georgia, serif" font-size="13" fill="#333333" text-anchor="middle">❌ OLD PLAYBOOK</text>
+
+  <text x="556" y="594" font-family="'Courier New', monospace" font-size="28" font-weight="bold" fill="#D4FF00" text-anchor="middle">→</text>
+
+  <rect x="604" y="548" width="368" height="80" rx="8" fill="rgba(212,255,0,0.06)" stroke="rgba(212,255,0,0.2)" stroke-width="1"/>
+  <text x="788" y="581" font-family="'Courier New', monospace" font-size="17" fill="#F2F2EE" text-anchor="middle">Systems that produce 24/7</text>
+  <text x="788" y="610" font-family="Georgia, serif" font-size="13" fill="#D4FF00" text-anchor="middle">✓ NEW PLAYBOOK</text>
+
+  <!-- Row 3 -->
+  <rect x="108" y="644" width="400" height="80" rx="8" fill="#141414" stroke="#242424" stroke-width="1"/>
+  <text x="308" y="677" font-family="'Courier New', monospace" font-size="17" fill="#555555" text-anchor="middle">Trading time for money</text>
+  <text x="308" y="706" font-family="Georgia, serif" font-size="13" fill="#333333" text-anchor="middle">❌ OLD PLAYBOOK</text>
+
+  <text x="556" y="690" font-family="'Courier New', monospace" font-size="28" font-weight="bold" fill="#D4FF00" text-anchor="middle">→</text>
+
+  <rect x="604" y="644" width="368" height="80" rx="8" fill="rgba(212,255,0,0.06)" stroke="rgba(212,255,0,0.2)" stroke-width="1"/>
+  <text x="788" y="677" font-family="'Courier New', monospace" font-size="17" fill="#F2F2EE" text-anchor="middle">Assets that earn while you sleep</text>
+  <text x="788" y="706" font-family="Georgia, serif" font-size="13" fill="#D4FF00" text-anchor="middle">✓ NEW PLAYBOOK</text>
+
+  <rect x="108" y="756" width="864" height="1" fill="#242424"/>
+
+  <!-- Quote -->
+  <text x="108" y="820" font-family="Georgia, serif" font-size="30" font-style="italic" fill="#888888">"The difference isn't talent.</text>
+  <text x="108" y="864" font-family="Georgia, serif" font-size="30" font-style="italic" fill="#888888">It's the decision to build</text>
+  <text x="108" y="908" font-family="Georgia, serif" font-size="30" font-style="italic" fill="#D4FF00">systems instead of doing tasks."</text>
+
+  <!-- Footer -->
+  <text x="108" y="992" font-family="'Courier New', monospace" font-size="16" fill="#D4FF00" letter-spacing="1">leveragedbuilder.com</text>
+  <text x="972" y="992" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#242424" text-anchor="end">LB</text>
+</svg>

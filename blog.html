@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articles — The Leveraged Builder</title>
+  <meta name="description" content="AI workflows, business systems, case studies and operator mindset — all documented in public." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230C0C0C'/><text y='.9em' font-size='80' x='10' fill='%23D4FF00' font-family='monospace' font-weight='bold'>LB</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero { padding: 160px 0 60px; }
+    .page-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 16px; }
+    .page-hero p { font-size: 1.125rem; max-width: 520px; }
+
+    /* Filter tabs */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--gray);
+      font-family: var(--font-display);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { color: var(--white); border-color: var(--gray-light); }
+    .filter-btn.active { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
+
+    /* Articles grid */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .article-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+    .article-card:hover { border-color: rgba(212,255,0,0.3); transform: translateY(-3px); }
+    .article-card--featured {
+      grid-column: span 2;
+      flex-direction: row;
+    }
+    .article-card__thumb {
+      background: var(--steel);
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      flex-shrink: 0;
+    }
+    .article-card--featured .article-card__thumb {
+      aspect-ratio: unset;
+      width: 45%;
+      font-size: 4rem;
+    }
+    .article-card__body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .article-card__tag {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 12px;
+    }
+    .article-card__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--white);
+      font-size: 1.1rem;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .article-card--featured .article-card__title { font-size: 1.4rem; }
+    .article-card__excerpt { font-size: 0.875rem; color: var(--gray); margin-bottom: 20px; line-height: 1.6; }
+    .article-card__meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--gray-light);
+      font-family: var(--font-display);
+      margin-top: auto;
+    }
+    .article-card__read { color: var(--yellow); font-weight: 700; }
+
+    /* Newsletter inline */
+    .newsletter-inline {
+      grid-column: span 1;
+      background: var(--yellow);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .newsletter-inline h3 {
+      font-size: 1.1rem;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+    .newsletter-inline p { font-size: 0.875rem; color: rgba(0,0,0,0.6); margin-bottom: 20px; }
+    .newsletter-inline input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(0,0,0,0.1);
+      color: var(--black);
+      font-size: 0.875rem;
+      margin-bottom: 10px;
+      outline: none;
+    }
+    .newsletter-inline input::placeholder { color: rgba(0,0,0,0.4); }
+    .newsletter-inline button {
+      width: 100%;
+      padding: 12px;
+      background: var(--black);
+      color: var(--yellow);
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .articles-grid { grid-template-columns: 1fr 1fr; }
+      .article-card--featured { grid-column: span 2; flex-direction: column; }
+      .article-card--featured .article-card__thumb { width: 100%; aspect-ratio: 16/9; }
+      .newsletter-inline { grid-column: span 2; }
+    }
+    @media (max-width: 600px) {
+      .articles-grid { grid-template-columns: 1fr; }
+      .article-card--featured { grid-column: span 1; }
+      .newsletter-inline { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">The <span>Leveraged</span> Builder</a>
+        <ul class="nav__links">
+          <li><a href="blog.html" style="color:var(--white)">Articles</a></li>
+          <li><a href="/#newsletter">Newsletter</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="/#newsletter" class="nav__cta">Join Free →</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span style="display:inline-block;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px;">All Articles</span>
+      <h1>The <span class="accent">playbook,</span><br>documented weekly.</h1>
+      <p>AI workflows, business systems, case studies and operator mindset — all built in public.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+
+      <!-- Filter bar -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterArticles('all', this)">All</button>
+        <button class="filter-btn" onclick="filterArticles('ai-workflows', this)">AI Workflows</button>
+        <button class="filter-btn" onclick="filterArticles('business-systems', this)">Business Systems</button>
+        <button class="filter-btn" onclick="filterArticles('case-studies', this)">Case Studies</button>
+        <button class="filter-btn" onclick="filterArticles('mindset', this)">Operator Mindset</button>
+        <button class="filter-btn" onclick="filterArticles('the-build', this)">The Build</button>
+      </div>
+
+      <!-- Articles grid -->
+      <div class="articles-grid" id="articles-grid">
+
+        <!-- Featured article -->
+        <a href="article-ai-content-pipeline.html" class="article-card article-card--featured fade-up" data-category="ai-workflows">
+          <div class="article-card__thumb">⚡</div>
+          <div class="article-card__body">
+            <span class="article-card__tag">AI Workflows</span>
+            <div class="article-card__title">The Complete AI Content Pipeline for Solo Creators</div>
+            <p class="article-card__excerpt">Research, write, record, distribute. One person. Under 6 hours a week. The exact system — with every tool, every prompt, and every step documented.</p>
+            <div class="article-card__meta">
+              <span>12 min read · May 2025</span>
+              <span class="article-card__read">Read →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Regular articles -->
+        <a href="article-200-month-business.html" class="article-card fade-up" data-category="business-systems">
+          <div class="article-card__thumb">💰</div>
+          <div class="article-card__body">
+            <span class="article-card__tag">Business Systems</span>
+            <div class="article-card__title">How to Run a One-Person Business for Under $200/Month</div>
+            <p class="article-card__excerpt">Five functions. One tool each. Zero redundancy. The minimum viable stack — with what to cut and the exact upgrade path when revenue allows.</p>
+            <div class="article-card__meta">
+              <span>8 min read · May 2025</span>
+              <span class="article-card__read">Read →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="article.html" class="article-card fade-up" data-category="case-studies">
+          <div class="article-card__thumb">📊</div>
+          <div class="article-card__body">
+            <span class="article-card__tag">Case Studies</span>
+            <div class="article-card__title">Month 1 Building in Public: Real Numbers, Real Lessons</div>
+            <p class="article-card__excerpt">What actually happened in the first 30 days of building The Leveraged Builder — traffic, subscribers, revenue, and mistakes.</p>
+            <div class="article-card__meta">
+              <span>5 min read · May 2025</span>
+              <span class="article-card__read">Read →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Newsletter CTA card -->
+        <div class="newsletter-inline fade-up">
+          <h3>Get this weekly.</h3>
+          <p>Every framework, workflow, and number — straight to your inbox. Free.</p>
+          <form class="newsletter-form-js" novalidate>
+            <input type="email" placeholder="Your email" required />
+            <button type="submit">Join Free →</button>
+          </form>
+        </div>
+
+        <a href="article.html" class="article-card fade-up" data-category="ai-workflows">
+          <div class="article-card__thumb">🤖</div>
+          <div class="article-card__body">
+            <span class="article-card__tag">AI Workflows</span>
+            <div class="article-card__title">5 AI Tools That Replaced $3,000/Month in Team Costs</div>
+            <p class="article-card__excerpt">The exact tools, the exact use cases, and the exact ROI — no fluff, just numbers.</p>
+            <div class="article-card__meta">
+              <span>4 min read · Apr 2025</span>
+              <span class="article-card__read">Read →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="article.html" class="article-card fade-up" data-category="mindset">
+          <div class="article-card__thumb">🧠</div>
+          <div class="article-card__body">
+            <span class="article-card__tag">Operator Mindset</span>
+            <div class="article-card__title">Stop Being Productive. Start Being Leveraged.</div>
+            <p class="article-card__excerpt">The mental shift that separates people who build systems from people who just stay busy.</p>
+            <div class="article-card__meta">
+              <span>3 min read · Apr 2025</span>
+              <span class="article-card__read">Read →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="article.html" class="article-card fade-up" data-category="the-build">
+          <div class="article-card__thumb">🏗️</div>
+          <div class="article-card__body">
+            <span class="article-card__tag">The Build</span>
+            <div class="article-card__title">Why I'm Building a Media Company While Running an Agency</div>
+            <p class="article-card__excerpt">The strategic logic behind building in public — and how the media company funds everything else.</p>
+            <div class="article-card__meta">
+              <span>5 min read · Apr 2025</span>
+              <span class="article-card__read">Read →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="article.html" class="article-card fade-up" data-category="business-systems">
+          <div class="article-card__thumb">💰</div>
+          <div class="article-card__body">
+            <span class="article-card__tag">Business Systems</span>
+            <div class="article-card__title">The Client Acquisition System That Runs on Autopilot</div>
+            <p class="article-card__excerpt">How I built a lead generation machine using AI research, automated outreach, and a simple CRM.</p>
+            <div class="article-card__meta">
+              <span>7 min read · Mar 2025</span>
+              <span class="article-card__read">Read →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="article.html" class="article-card fade-up" data-category="ai-workflows">
+          <div class="article-card__thumb">✍️</div>
+          <div class="article-card__body">
+            <span class="article-card__tag">AI Workflows</span>
+            <div class="article-card__title">The Prompt That Writes My Newsletter Every Week</div>
+            <p class="article-card__excerpt">Copy the exact Claude prompt I use to draft, structure, and refine the weekly AI Leverage Brief in under 30 minutes.</p>
+            <div class="article-card__meta">
+              <span>4 min read · Mar 2025</span>
+              <span class="article-card__read">Read →</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:1px solid var(--border);padding-top:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <p class="footer__copy">© 2025 The Leveraged Builder.</p>
+        <a href="/" style="font-size:0.875rem;color:var(--gray);">← Back to home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function filterArticles(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.article-card[data-category]').forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

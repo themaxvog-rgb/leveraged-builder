@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources — The Leveraged Builder</title>
+  <meta name="description" content="The AI stack, prompt library, and tools we use to run a full media and business operation." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230C0C0C'/><text y='.9em' font-size='80' x='10' fill='%23D4FF00' font-family='monospace' font-weight='bold'>LB</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero { padding: 160px 0 80px; }
+    .page-hero .eyebrow { display:inline-block;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px; }
+    .page-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 24px; }
+    .page-hero p { font-size: 1.125rem; max-width: 560px; }
+
+    /* Stack grid */
+    .stack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .stack-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .stack-card:hover { border-color: rgba(212,255,0,0.35); transform: translateY(-2px); }
+    .stack-card__header { display: flex; align-items: flex-start; justify-content: space-between; }
+    .stack-card__name { font-family: var(--font-display); font-weight: 700; color: var(--white); font-size: 1.1rem; }
+    .stack-card__price {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(212,255,0,0.12);
+      color: var(--yellow);
+      white-space: nowrap;
+    }
+    .stack-card__category {
+      font-size: 0.7rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 4px;
+    }
+    .stack-card__desc { font-size: 0.9rem; color: var(--gray); line-height: 1.6; flex: 1; }
+    .stack-card__use {
+      font-size: 0.8125rem;
+      color: var(--white);
+      background: var(--steel);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .stack-card__use strong { color: var(--yellow); display: block; margin-bottom: 4px; font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .stack-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-display);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--yellow);
+      transition: gap 0.2s;
+    }
+    .stack-card__link:hover { gap: 10px; }
+
+    /* Prompt library */
+    .prompts-grid { display: flex; flex-direction: column; gap: 16px; }
+    .prompt-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .prompt-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .prompt-card__header:hover { background: var(--steel); }
+    .prompt-card__title { font-family: var(--font-display); font-weight: 700; color: var(--white); font-size: 0.9375rem; }
+    .prompt-card__tag {
+      font-size: 0.7rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      background: rgba(212,255,0,0.1);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .prompt-card__arrow { color: var(--gray); font-size: 1rem; transition: transform 0.2s; }
+    .prompt-card.open .prompt-card__arrow { transform: rotate(180deg); }
+    .prompt-card__body {
+      display: none;
+      padding: 0 24px 24px;
+    }
+    .prompt-card.open .prompt-card__body { display: block; }
+    .prompt-card__code {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.8125rem;
+      color: var(--gray);
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin-top: 12px;
+    }
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--yellow);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: opacity 0.2s;
+    }
+    .copy-btn:hover { opacity: 0.7; }
+
+    /* Responsive */
+    @media (max-width: 900px) { .stack-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .stack-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">The <span>Leveraged</span> Builder</a>
+        <ul class="nav__links">
+          <li><a href="/#content">Content</a></li>
+          <li><a href="/#newsletter">Newsletter</a></li>
+          <li><a href="resources.html" style="color:var(--white)">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="/#newsletter" class="nav__cta">Join Free →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Free Resources</span>
+      <h1>The <span class="accent">complete stack.</span><br>No upsell.</h1>
+      <p>Every tool, prompt, and framework we use to run a full media and business operation. All free to use — some links are affiliate (we earn a small commission at no cost to you).</p>
+    </div>
+  </section>
+
+  <!-- AI STACK -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">The AI Stack</span>
+        <h2>12 tools.<br>~$100/month.<br>Full operation.</h2>
+      </div>
+
+      <div class="stack-grid">
+
+        <div class="stack-card fade-up">
+          <div class="stack-card__header">
+            <div>
+              <div class="stack-card__category">Thinking & Writing</div>
+              <div class="stack-card__name">Claude</div>
+            </div>
+            <span class="stack-card__price">$20/mo</span>
+          </div>
+          <p class="stack-card__desc">The best AI for strategy, long-form writing, analysis, and complex reasoning. This is the brain of the operation.</p>
+          <div class="stack-card__use"><strong>We use it for</strong>Scripts, newsletters, strategy, analysis, system design</div>
+          <a href="https://claude.ai" target="_blank" class="stack-card__link">Try Claude →</a>
+        </div>
+
+        <div class="stack-card fade-up">
+          <div class="stack-card__header">
+            <div>
+              <div class="stack-card__category">Research</div>
+              <div class="stack-card__name">Perplexity</div>
+            </div>
+            <span class="stack-card__price">$20/mo</span>
+          </div>
+          <p class="stack-card__desc">Real-time research with citations. Replaces 5+ hours of weekly Googling. Indispensable for trend detection and market research.</p>
+          <div class="stack-card__use"><strong>We use it for</strong>Trend research, competitor analysis, topic discovery</div>
+          <a href="https://perplexity.ai" target="_blank" class="stack-card__link">Try Perplexity →</a>
+        </div>
+
+        <div class="stack-card fade-up">
+          <div class="stack-card__header">
+            <div>
+              <div class="stack-card__category">Automation</div>
+              <div class="stack-card__name">Make.com</div>
+            </div>
+            <span class="stack-card__price">$16/mo</span>
+          </div>
+          <p class="stack-card__desc">The automation backbone. Connects every tool in the stack and runs workflows 24/7 without manual intervention.</p>
+          <div class="stack-card__use"><strong>We use it for</strong>Content pipeline, distribution, analytics, notifications</div>
+          <a href="https://make.com" target="_blank" class="stack-card__link">Try Make.com →</a>
+        </div>
+
+        <div class="stack-card fade-up">
+          <div class="stack-card__header">
+            <div>
+              <div class="stack-card__category">Voice & Audio</div>
+              <div class="stack-card__name">ElevenLabs</div>
+            </div>
+            <span class="stack-card__price">$22/mo</span>
+          </div>
+          <p class="stack-card__desc">Professional AI voice generation. Enables high-quality audio content without recording sessions. Creates a consistent brand voice.</p>
+          <div class="stack-card__use"><strong>We use it for</strong>Voiceovers, video narration, audio content</div>
+          <a href="https://elevenlabs.io" target="_blank" class="stack-card__link">Try ElevenLabs →</a>
+        </div>
+
+        <div class="stack-card fade-up">
+          <div class="stack-card__header">
+            <div>
+              <div class="stack-card__category">Visuals</div>
+              <div class="stack-card__name">Midjourney</div>
+            </div>
+            <span class="stack-card__price">$10/mo</span>
+          </div>
+          <p class="stack-card__desc">The gold standard for AI image generation. Used for thumbnails, brand visuals, and editorial content. No designer needed.</p>
+          <div class="stack-card__use"><strong>We use it for</strong>Thumbnails, social visuals, brand imagery</div>
+          <a href="https://midjourney.com" target="_blank" class="stack-card__link">Try Midjourney →</a>
+        </div>
+
+        <div class="stack-card fade-up">
+          <div class="stack-card__header">
+            <div>
+              <div class="stack-card__category">Newsletter</div>
+              <div class="stack-card__name">Beehiiv</div>
+            </div>
+            <span class="stack-card__price">Free → $42/mo</span>
+          </div>
+          <p class="stack-card__desc">The best newsletter platform for media brands. Built-in monetization, referral system, and analytics. Free up to 2,500 subscribers.</p>
+          <div class="stack-card__use"><strong>We use it for</strong>Weekly newsletter, subscriber management, monetization</div>
+          <a href="https://beehiiv.com" target="_blank" class="stack-card__link">Try Beehiiv →</a>
+        </div>
+
+        <div class="stack-card fade-up">
+          <div class="stack-card__header">
+            <div>
+              <div class="stack-card__category">Video Editing</div>
+              <div class="stack-card__name">Descript</div>
+            </div>
+            <span class="stack-card__price">$24/mo</span>
+          </div>
+          <p class="stack-card__desc">Edit video like a document. Transcript-based editing removes the technical barrier. AI removes filler words automatically.</p>
+          <div class="stack-card__use"><strong>We use it for</strong>Long-form video editing, transcript repurposing</div>
+          <a href="https://descript.com" target="_blank" class="stack-card__link">Try Descript →</a>
+        </div>
+
+        <div class="stack-card fade-up">
+          <div class="stack-card__header">
+            <div>
+              <div class="stack-card__category">Scheduling</div>
+              <div class="stack-card__name">Buffer</div>
+            </div>
+            <span class="stack-card__price">$15/mo</span>
+          </div>
+          <p class="stack-card__desc">Multi-platform scheduling with analytics. Set the content calendar once and let it post automatically across all channels.</p>
+          <div class="stack-card__use"><strong>We use it for</strong>Instagram, X, LinkedIn auto-scheduling</div>
+          <a href="https://buffer.com" target="_blank" class="stack-card__link">Try Buffer →</a>
+        </div>
+
+        <div class="stack-card fade-up">
+          <div class="stack-card__header">
+            <div>
+              <div class="stack-card__category">Workspace</div>
+              <div class="stack-card__name">Notion</div>
+            </div>
+            <span class="stack-card__price">$10/mo</span>
+          </div>
+          <p class="stack-card__desc">The operating system for the entire media company. Content database, editorial calendar, SOPs, and analytics dashboard — all in one place.</p>
+          <div class="stack-card__use"><strong>We use it for</strong>Content OS, idea bank, editorial planning</div>
+          <a href="https://notion.so" target="_blank" class="stack-card__link">Try Notion →</a>
+        </div>
+
+        <div class="stack-card fade-up">
+          <div class="stack-card__header">
+            <div>
+              <div class="stack-card__category">Short-form Video</div>
+              <div class="stack-card__name">CapCut</div>
+            </div>
+            <span class="stack-card__price">Free</span>
+          </div>
+          <p class="stack-card__desc">The best mobile-first editor for TikTok and Reels. Auto-captions, templates, and effects built specifically for short-form content.</p>
+          <div class="stack-card__use"><strong>We use it for</strong>TikTok, Reels, YouTube Shorts</div>
+          <a href="https://capcut.com" target="_blank" class="stack-card__link">Try CapCut →</a>
+        </div>
+
+        <div class="stack-card fade-up">
+          <div class="stack-card__header">
+            <div>
+              <div class="stack-card__category">AI Video</div>
+              <div class="stack-card__name">Runway ML</div>
+            </div>
+            <span class="stack-card__price">$15/mo</span>
+          </div>
+          <p class="stack-card__desc">AI-generated video and effects. Used for b-roll generation, visual transitions, and cinematic effects without a camera crew.</p>
+          <div class="stack-card__use"><strong>We use it for</strong>B-roll, visual effects, background generation</div>
+          <a href="https://runwayml.com" target="_blank" class="stack-card__link">Try Runway →</a>
+        </div>
+
+        <div class="stack-card fade-up">
+          <div class="stack-card__header">
+            <div>
+              <div class="stack-card__category">Digital Products</div>
+              <div class="stack-card__name">Gumroad</div>
+            </div>
+            <span class="stack-card__price">10% fee</span>
+          </div>
+          <p class="stack-card__desc">The simplest way to sell digital products. No monthly fee — they take 10% per sale. Perfect for starting with templates, guides, and prompt packs.</p>
+          <div class="stack-card__use"><strong>We use it for</strong>Templates, guides, prompt libraries, mini-courses</div>
+          <a href="https://gumroad.com" target="_blank" class="stack-card__link">Try Gumroad →</a>
+        </div>
+
+      </div>
+
+      <!-- TOTAL COST -->
+      <div style="margin-top:32px;padding:24px 32px;background:var(--card);border:1px solid var(--border);border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;" class="fade-up">
+        <div>
+          <div style="font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray);margin-bottom:4px;">Total monthly cost</div>
+          <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--white);">~$152<span style="color:var(--gray);font-size:1rem;font-weight:400;">/month</span></div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray);margin-bottom:4px;">Estimated value replaced</div>
+          <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--yellow);">$3,000+<span style="color:var(--gray);font-size:1rem;font-weight:400;">/month</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMPT LIBRARY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Prompt Library</span>
+        <h2>Copy. Paste. Deploy.</h2>
+        <p>The exact prompts we use weekly. Click any card to expand and copy.</p>
+      </div>
+
+      <div class="prompts-grid">
+
+        <div class="prompt-card fade-up">
+          <div class="prompt-card__header" onclick="this.parentElement.classList.toggle('open')">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span class="prompt-card__tag">YouTube</span>
+              <span class="prompt-card__title">Video Script Generator</span>
+            </div>
+            <span class="prompt-card__arrow">↓</span>
+          </div>
+          <div class="prompt-card__body">
+            <p style="font-size:0.875rem;color:var(--gray);margin-bottom:8px;">Use with Claude. Replace brackets with your specifics.</p>
+            <div class="prompt-card__code">You are a world-class YouTube scriptwriter specializing in AI entrepreneurship content.
+
+Write a [8-12 minute] video script on: [TOPIC]
+
+Audience: Ambitious 25-35 year olds who want to build leveraged businesses using AI. They're smart, skeptical of hype, and respond to systems and real numbers.
+
+Requirements:
+- Hook must create curiosity or contrast in the first 5 seconds
+- Use the contrast storytelling framework (before → discovery → after)
+- Include 3 concrete, numbered frameworks or steps
+- Add 2-3 pattern interrupt moments (surprising stat, bold claim, or counter-intuitive insight)
+- End with a specific CTA to subscribe + join the newsletter
+
+Tone: Direct, peer-level, confident. No filler phrases. No "in this video I will show you."
+
+Output: Full script with [B-ROLL] cues and timestamps.</div>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='Copy prompt',2000)})">Copy prompt</button>
+          </div>
+        </div>
+
+        <div class="prompt-card fade-up">
+          <div class="prompt-card__header" onclick="this.parentElement.classList.toggle('open')">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span class="prompt-card__tag">Short-form</span>
+              <span class="prompt-card__title">Hook Generator (20 variations)</span>
+            </div>
+            <span class="prompt-card__arrow">↓</span>
+          </div>
+          <div class="prompt-card__body">
+            <div class="prompt-card__code">Generate 20 hooks for a short-form video about: [TOPIC]
+
+Target audience: Ambitious 25-35 year olds building online businesses.
+
+Mix these formats evenly:
+- Curiosity gap ("Nobody talks about...")
+- Contrast ("Before AI: X. After AI: Y.")
+- Identity ("If you're still doing X...")
+- Data/proof ("I tested X for 30 days...")
+- Urgency ("The window for X is closing...")
+
+Rules:
+- Each hook must be under 12 words
+- No generic phrases ("in this video", "today I'm going to")
+- Each must make the viewer feel they'll miss something if they scroll
+- No questions that can be answered with yes/no
+
+Output as a numbered list with the hook type labeled.</div>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='Copy prompt',2000)})">Copy prompt</button>
+          </div>
+        </div>
+
+        <div class="prompt-card fade-up">
+          <div class="prompt-card__header" onclick="this.parentElement.classList.toggle('open')">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span class="prompt-card__tag">Newsletter</span>
+              <span class="prompt-card__title">Weekly Brief Writer</span>
+            </div>
+            <span class="prompt-card__arrow">↓</span>
+          </div>
+          <div class="prompt-card__body">
+            <div class="prompt-card__code">Write a premium newsletter issue for The Leveraged Builder.
+
+Topic this week: [TOPIC]
+
+Format:
+1. Subject line (5 options — curiosity, contrast, data, identity, utility)
+2. Opening hook (2-3 sentences, no greeting)
+3. The Big Idea (150 words — the core insight of this issue)
+4. Three Takeaways (bullet format, each actionable in under 1 hour)
+5. One Tool Spotlight (name, what it does, best use case, link)
+6. One number (a stat, metric or data point that reframes the topic)
+7. Closing line (1 sentence — not a summary, a provocation)
+
+Tone: Premium intelligence briefing. Peer-level. Direct. No filler.
+Length: 400-550 words total.
+Voice: The Leveraged Builder — systems-oriented, honest, ambitious.</div>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='Copy prompt',2000)})">Copy prompt</button>
+          </div>
+        </div>
+
+        <div class="prompt-card fade-up">
+          <div class="prompt-card__header" onclick="this.parentElement.classList.toggle('open')">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span class="prompt-card__tag">Twitter/X</span>
+              <span class="prompt-card__title">Thread Generator</span>
+            </div>
+            <span class="prompt-card__arrow">↓</span>
+          </div>
+          <div class="prompt-card__body">
+            <div class="prompt-card__code">Write a high-engagement Twitter/X thread about: [TOPIC]
+
+Structure:
+- Tweet 1: Hook (bold claim or surprising contrast, under 200 chars)
+- Tweets 2-8: The breakdown (one point per tweet, each self-contained)
+- Tweet 9: The lesson/framework (the distilled takeaway)
+- Tweet 10: CTA (follow + newsletter, natural not forced)
+
+Rules:
+- Every tweet must be able to stand alone
+- Use line breaks for readability (max 2-3 lines per tweet)
+- Include at least 1 specific number or data point
+- No hashtags
+- No emojis unless they replace a word
+- End tweet 1 with "🧵" only
+
+Tone: Direct, peer-level. Like a smart friend sharing what they learned.
+Topic context: AI entrepreneurship, leveraged business building.</div>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='Copy prompt',2000)})">Copy prompt</button>
+          </div>
+        </div>
+
+        <div class="prompt-card fade-up">
+          <div class="prompt-card__header" onclick="this.parentElement.classList.toggle('open')">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span class="prompt-card__tag">Strategy</span>
+              <span class="prompt-card__title">Content Repurposing Engine</span>
+            </div>
+            <span class="prompt-card__arrow">↓</span>
+          </div>
+          <div class="prompt-card__body">
+            <div class="prompt-card__code">I have a long-form piece of content (YouTube script / article / newsletter).
+Repurpose it into the following formats:
+
+[PASTE YOUR CONTENT HERE]
+
+Generate:
+1. Three 30-60 second TikTok/Reels scripts (different hooks, same core idea)
+2. One Twitter/X thread (10 tweets)
+3. Five standalone social media posts (Instagram captions)
+4. Three email subject line options for a newsletter version
+5. One LinkedIn post (professional tone, same insights)
+
+For each format, adapt the tone and structure to the platform.
+Do not copy-paste — reframe the insight for each context.
+Keep the core idea but change the entry point for each audience.</div>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='Copy prompt',2000)})">Copy prompt</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div style="background:var(--yellow);border-radius:20px;padding:72px 80px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;" class="fade-up">
+        <div>
+          <h2 style="color:var(--black);margin-bottom:12px;">Get the full AI Stack as a PDF.</h2>
+          <p style="color:rgba(0,0,0,0.6);max-width:440px;">All 12 tools, costs, use cases, and setup order — formatted for easy reference. Free with newsletter signup.</p>
+        </div>
+        <a href="/#newsletter" class="btn" style="background:var(--black);color:var(--yellow);white-space:nowrap;">Get it free →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:1px solid var(--border);padding-top:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <p class="footer__copy">© 2025 The Leveraged Builder. Affiliate links help fund this project.</p>
+        <a href="/" style="font-size:0.875rem;color:var(--gray);">← Back to home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

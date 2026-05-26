@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#0C0C0C"/>
+
+  <!-- Subtle border -->
+  <rect x="2" y="2" width="396" height="396" fill="none" stroke="#242424" stroke-width="2"/>
+
+  <!-- Yellow accent corner lines (top-left) -->
+  <line x1="0" y1="40" x2="40" y2="40" stroke="#D4FF00" stroke-width="2"/>
+  <line x1="40" y1="0" x2="40" y2="40" stroke="#D4FF00" stroke-width="2"/>
+
+  <!-- Yellow accent corner lines (bottom-right) -->
+  <line x1="400" y1="360" x2="360" y2="360" stroke="#D4FF00" stroke-width="2"/>
+  <line x1="360" y1="400" x2="360" y2="360" stroke="#D4FF00" stroke-width="2"/>
+
+  <!-- LB Letters -->
+  <text
+    x="200"
+    y="248"
+    font-family="'Courier New', Courier, monospace"
+    font-weight="bold"
+    font-size="160"
+    fill="#F2F2EE"
+    text-anchor="middle"
+    letter-spacing="-8"
+  >LB</text>
+
+  <!-- Yellow dot accent -->
+  <circle cx="200" cy="308" r="6" fill="#D4FF00"/>
+
+  <!-- Tagline -->
+  <text
+    x="200"
+    y="348"
+    font-family="'Courier New', Courier, monospace"
+    font-weight="normal"
+    font-size="16"
+    fill="#555555"
+    text-anchor="middle"
+    letter-spacing="4"
+  >LEVERAGED BUILDER</text>
+</svg>

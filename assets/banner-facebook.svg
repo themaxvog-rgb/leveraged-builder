@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 312" width="820" height="312">
+  <!-- Background -->
+  <rect width="820" height="312" fill="#0C0C0C"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="104" x2="820" y2="104" stroke="#1A1A1A" stroke-width="1"/>
+  <line x1="0" y1="208" x2="820" y2="208" stroke="#1A1A1A" stroke-width="1"/>
+  <line x1="205" y1="0" x2="205" y2="312" stroke="#1A1A1A" stroke-width="1"/>
+  <line x1="410" y1="0" x2="410" y2="312" stroke="#1A1A1A" stroke-width="1"/>
+  <line x1="615" y1="0" x2="615" y2="312" stroke="#1A1A1A" stroke-width="1"/>
+
+  <!-- Yellow accent bar top -->
+  <rect x="0" y="0" width="820" height="3" fill="#D4FF00"/>
+
+  <!-- Yellow accent left block -->
+  <rect x="60" y="60" width="4" height="192" fill="#D4FF00" opacity="0.5"/>
+
+  <!-- LB monogram -->
+  <text
+    x="90"
+    y="185"
+    font-family="'Courier New', Courier, monospace"
+    font-weight="bold"
+    font-size="96"
+    fill="#F2F2EE"
+    letter-spacing="-4"
+  >LB</text>
+
+  <!-- Divider -->
+  <rect x="260" y="80" width="1" height="152" fill="#242424"/>
+
+  <!-- Main headline -->
+  <text
+    x="290"
+    y="148"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-weight="bold"
+    font-size="38"
+    fill="#F2F2EE"
+    letter-spacing="-1"
+  >Build more.</text>
+
+  <text
+    x="290"
+    y="196"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-weight="bold"
+    font-size="38"
+    fill="#F2F2EE"
+    letter-spacing="-1"
+  >Work <tspan fill="#D4FF00">less.</tspan></text>
+
+  <!-- Tagline -->
+  <text
+    x="290"
+    y="234"
+    font-family="'Courier New', Courier, monospace"
+    font-size="13"
+    fill="#555555"
+    letter-spacing="3"
+  >WIN DIFFERENTLY.</text>
+
+  <!-- Right side — domain -->
+  <text
+    x="760"
+    y="172"
+    font-family="'Courier New', Courier, monospace"
+    font-size="13"
+    fill="#D4FF00"
+    text-anchor="end"
+    letter-spacing="1"
+  >leveragedbuilder.com</text>
+
+  <!-- Right side — description -->
+  <text
+    x="760"
+    y="196"
+    font-family="'Courier New', Courier, monospace"
+    font-size="11"
+    fill="#555555"
+    text-anchor="end"
+    letter-spacing="1"
+  >AI workflows · Business systems</text>
+
+  <!-- Yellow dot -->
+  <circle cx="290" cy="252" r="4" fill="#D4FF00"/>
+
+  <!-- Bottom border -->
+  <rect x="0" y="309" width="820" height="3" fill="#242424"/>
+</svg>

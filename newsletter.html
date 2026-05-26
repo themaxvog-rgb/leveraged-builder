@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newsletter — The Leveraged Builder</title>
+  <meta name="description" content="The AI Leverage Brief — weekly workflows, systems, and real numbers from building in public. Free." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230C0C0C'/><text y='.9em' font-size='80' x='10' fill='%23D4FF00' font-family='monospace' font-weight='bold'>LB</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .nl-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .nl-hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(212,255,0,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .nl-hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      width: 100%;
+    }
+    .nl-hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 20px; }
+    .nl-hero p { font-size: 1.125rem; margin-bottom: 36px; max-width: 460px; }
+    .nl-form { display: flex; flex-direction: column; gap: 12px; }
+    .nl-form input {
+      padding: 18px 20px;
+      background: var(--steel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--white);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .nl-form input:focus { border-color: var(--yellow); }
+    .nl-form input::placeholder { color: var(--gray-light); }
+    .nl-form button { font-size: 1rem; padding: 18px; }
+    .nl-note { font-size: 0.8rem; color: var(--gray-light); margin-top: 8px; }
+
+    /* Preview card */
+    .nl-preview {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .nl-preview__header {
+      background: var(--steel);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nl-preview__dot { width: 10px; height: 10px; border-radius: 50%; }
+    .nl-preview__subject {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-left: 8px;
+      font-family: var(--font-body);
+    }
+    .nl-preview__body { padding: 32px; }
+    .nl-preview__label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 16px;
+    }
+    .nl-preview__title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .nl-preview__text { font-size: 0.875rem; color: var(--gray); line-height: 1.75; margin-bottom: 16px; }
+    .nl-preview__divider { height: 1px; background: var(--border); margin: 20px 0; }
+    .nl-preview__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .nl-preview__item-num {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--yellow);
+      font-size: 0.75rem;
+      min-width: 20px;
+    }
+    .nl-preview__item-text { font-size: 0.8125rem; color: var(--gray); line-height: 1.6; }
+    .nl-preview__item-text strong { color: var(--white); }
+
+    /* What's inside */
+    .inside-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .inside-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .inside-card__icon { font-size: 1.5rem; margin-bottom: 16px; }
+    .inside-card__title { font-family: var(--font-display); font-weight: 700; color: var(--white); font-size: 1rem; margin-bottom: 8px; }
+    .inside-card__desc { font-size: 0.875rem; }
+
+    /* Archive */
+    .archive-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .archive-item {
+      background: var(--black);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: background 0.2s;
+      cursor: pointer;
+      flex-wrap: wrap;
+    }
+    .archive-item:hover { background: var(--card); }
+    .archive-item__title { font-family: var(--font-display); font-weight: 600; color: var(--white); font-size: 0.9375rem; }
+    .archive-item__meta { font-size: 0.8125rem; color: var(--gray); }
+    .archive-item__read { font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: var(--yellow); }
+
+    @media (max-width: 900px) {
+      .nl-hero__inner { grid-template-columns: 1fr; gap: 48px; }
+      .inside-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">The <span>Leveraged</span> Builder</a>
+        <ul class="nav__links">
+          <li><a href="blog.html">Articles</a></li>
+          <li><a href="newsletter.html" style="color:var(--white)">Newsletter</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="#signup" class="nav__cta">Join Free →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="nl-hero" id="signup">
+    <div class="container">
+      <div class="nl-hero__inner">
+        <div>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px;">
+            <span style="width:20px;height:2px;background:var(--yellow);display:block;"></span>
+            Weekly Newsletter
+          </span>
+          <h1>The AI <span class="accent">Leverage</span> Brief.</h1>
+          <p>One workflow. One framework. One honest number. Every week — from building a real business with AI, in public.</p>
+          <form class="nl-form newsletter-form-js" novalidate>
+            <input type="email" placeholder="Enter your email address" required />
+            <button type="submit" class="btn btn--primary">Join 1,000+ builders — Free →</button>
+          </form>
+          <p class="nl-note">Free forever. No spam. Unsubscribe in one click. You'll get the AI Stack PDF immediately.</p>
+        </div>
+
+        <!-- Email preview -->
+        <div class="nl-preview">
+          <div class="nl-preview__header">
+            <div class="nl-preview__dot" style="background:#ff5f57;"></div>
+            <div class="nl-preview__dot" style="background:#febc2e;"></div>
+            <div class="nl-preview__dot" style="background:#28c840;"></div>
+            <span class="nl-preview__subject">The AI Leverage Brief #001 — Your first workflow</span>
+          </div>
+          <div class="nl-preview__body">
+            <div class="nl-preview__label">The Leveraged Builder · Weekly</div>
+            <div class="nl-preview__title">The workflow that saves me 5 hours every week</div>
+            <p class="nl-preview__text">Most people use AI to answer questions. Operators use it to eliminate entire categories of work. Here's the difference in practice...</p>
+            <div class="nl-preview__divider"></div>
+            <div class="nl-preview__item">
+              <span class="nl-preview__item-num">01</span>
+              <div class="nl-preview__item-text"><strong>This week's workflow</strong> — The automated research pipeline that replaces 3 hours of manual work.</div>
+            </div>
+            <div class="nl-preview__item">
+              <span class="nl-preview__item-num">02</span>
+              <div class="nl-preview__item-text"><strong>Tool spotlight</strong> — Why Perplexity is the most underrated tool in the stack.</div>
+            </div>
+            <div class="nl-preview__item">
+              <span class="nl-preview__item-num">03</span>
+              <div class="nl-preview__item-text"><strong>The number</strong> — $152/month. The full cost of running this operation.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's inside -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Every issue includes</span>
+        <h2>Five things.<br>Under 5 minutes.</h2>
+      </div>
+      <div class="inside-grid">
+        <div class="inside-card fade-up">
+          <div class="inside-card__icon">⚡</div>
+          <div class="inside-card__title">1 AI Workflow</div>
+          <p class="inside-card__desc">A complete, tested automation you can implement this week — with tools, prompts, and setup steps.</p>
+        </div>
+        <div class="inside-card fade-up">
+          <div class="inside-card__icon">📐</div>
+          <div class="inside-card__title">1 Business Framework</div>
+          <p class="inside-card__desc">A system for client acquisition, pricing, operations, or growth — simplified into a framework you can apply immediately.</p>
+        </div>
+        <div class="inside-card fade-up">
+          <div class="inside-card__icon">📊</div>
+          <div class="inside-card__title">1 Real Number</div>
+          <p class="inside-card__desc">A metric, stat, or data point from the build — revenue, subscribers, costs, conversions. Always honest.</p>
+        </div>
+        <div class="inside-card fade-up">
+          <div class="inside-card__icon">🔧</div>
+          <div class="inside-card__title">1 Tool Spotlight</div>
+          <p class="inside-card__desc">One tool from the AI Stack — what it does, how we use it, what it costs, and whether it's worth it.</p>
+        </div>
+        <div class="inside-card fade-up">
+          <div class="inside-card__icon">🏗️</div>
+          <div class="inside-card__title">1 Build Update</div>
+          <p class="inside-card__desc">An honest update on what happened this week — what worked, what failed, what changed. Building in public.</p>
+        </div>
+        <div class="inside-card fade-up" style="background:var(--yellow);border-color:var(--yellow);">
+          <div class="inside-card__icon">🎁</div>
+          <div class="inside-card__title" style="color:var(--black);">Free on signup</div>
+          <p class="inside-card__desc" style="color:rgba(0,0,0,0.6);">The complete AI Stack PDF — 12 tools, costs, prompts, and the order to set them up. Delivered immediately.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Archive -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Past issues</span>
+        <h2>The archive.</h2>
+        <p>Every issue is free to read. Subscribe to get the next one in your inbox.</p>
+      </div>
+      <div class="archive-list fade-up">
+        <div class="archive-item">
+          <div>
+            <div class="archive-item__title">The workflow that saves me 5 hours every week</div>
+            <div class="archive-item__meta">Issue #001 · May 26, 2025</div>
+          </div>
+          <span class="archive-item__read">Read →</span>
+        </div>
+        <div class="archive-item">
+          <div>
+            <div class="archive-item__title">Why I replaced my VA with a $20/month AI tool</div>
+            <div class="archive-item__meta">Issue #002 · Coming soon</div>
+          </div>
+          <span class="archive-item__read" style="color:var(--gray);">Soon</span>
+        </div>
+        <div class="archive-item">
+          <div>
+            <div class="archive-item__title">The client acquisition system that runs on autopilot</div>
+            <div class="archive-item__meta">Issue #003 · Coming soon</div>
+          </div>
+          <span class="archive-item__read" style="color:var(--gray);">Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:1px solid var(--border);padding-top:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <p class="footer__copy">© 2025 The Leveraged Builder.</p>
+        <a href="/" style="font-size:0.875rem;color:var(--gray);">← Back to home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

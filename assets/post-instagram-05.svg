@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="#0C0C0C"/>
+
+  <!-- Top yellow bar -->
+  <rect x="0" y="0" width="1080" height="4" fill="#D4FF00"/>
+  <!-- Bottom yellow bar -->
+  <rect x="0" y="1076" width="1080" height="4" fill="#D4FF00"/>
+  <!-- Left vertical line -->
+  <rect x="80" y="80" width="3" height="920" opacity="0.2" fill="#FFFFFF"/>
+
+  <!-- Eyebrow badge -->
+  <rect x="108" y="100" width="200" height="36" rx="4" fill="#D4FF00" opacity="0.12"/>
+  <text x="208" y="124" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" text-anchor="middle" letter-spacing="2">THE TRAP</text>
+
+  <!-- Main title -->
+  <text x="108" y="215" font-family="Georgia, serif" font-size="56" fill="#F2F2EE" font-weight="bold">You're paying</text>
+  <text x="108" y="285" font-family="Georgia, serif" font-size="56" fill="#F2F2EE" font-weight="bold">3x for the</text>
+  <text x="108" y="355" font-family="Georgia, serif" font-size="56" fill="#D4FF00" font-weight="bold">same function.</text>
+
+  <!-- Divider -->
+  <rect x="108" y="390" width="864" height="1" fill="#242424"/>
+
+  <!-- Left column header -->
+  <rect x="108" y="415" width="415" height="44" rx="4" fill="#1A1A1A"/>
+  <text x="315" y="443" font-family="'Courier New', monospace" font-size="14" fill="#888888" text-anchor="middle" letter-spacing="2">BLOATED STACK</text>
+
+  <!-- Right column header -->
+  <rect x="557" y="415" width="415" height="44" rx="4" fill="#D4FF00"/>
+  <text x="764" y="443" font-family="'Courier New', monospace" font-size="14" fill="#0C0C0C" text-anchor="middle" letter-spacing="2">LEAN STACK</text>
+
+  <!-- LEFT rows -->
+  <rect x="108" y="471" width="415" height="56" rx="4" fill="#141414"/>
+  <text x="128" y="497" font-family="'Courier New', monospace" font-size="11" fill="#555555" letter-spacing="1">EMAIL</text>
+  <text x="128" y="516" font-family="Georgia, serif" font-size="18" fill="#888888">Mailchimp + ConvertKit + Substack</text>
+
+  <rect x="108" y="539" width="415" height="56" rx="4" fill="#0C0C0C"/>
+  <text x="128" y="565" font-family="'Courier New', monospace" font-size="11" fill="#555555" letter-spacing="1">PROJECTS</text>
+  <text x="128" y="584" font-family="Georgia, serif" font-size="18" fill="#888888">Asana + Trello + ClickUp + Notion</text>
+
+  <rect x="108" y="607" width="415" height="56" rx="4" fill="#141414"/>
+  <text x="128" y="633" font-family="'Courier New', monospace" font-size="11" fill="#555555" letter-spacing="1">AUTOMATION</text>
+  <text x="128" y="652" font-family="Georgia, serif" font-size="18" fill="#888888">Zapier + Make.com + n8n</text>
+
+  <rect x="108" y="675" width="415" height="56" rx="4" fill="#0C0C0C"/>
+  <text x="128" y="701" font-family="'Courier New', monospace" font-size="11" fill="#555555" letter-spacing="1">SOCIAL</text>
+  <text x="128" y="720" font-family="Georgia, serif" font-size="18" fill="#888888">Buffer + Hootsuite + Later</text>
+
+  <!-- LEFT total -->
+  <rect x="108" y="743" width="415" height="60" rx="4" fill="#2A0A0A"/>
+  <rect x="108" y="743" width="4" height="60" fill="#FF4444"/>
+  <text x="128" y="768" font-family="'Courier New', monospace" font-size="12" fill="#FF6666" letter-spacing="1">TOTAL / MONTH</text>
+  <text x="128" y="793" font-family="Georgia, serif" font-size="28" fill="#FF6666" font-weight="bold">$700–900</text>
+
+  <!-- RIGHT rows -->
+  <rect x="557" y="471" width="415" height="56" rx="4" fill="#141414"/>
+  <text x="577" y="497" font-family="'Courier New', monospace" font-size="11" fill="#888888" letter-spacing="1">EMAIL</text>
+  <text x="577" y="516" font-family="Georgia, serif" font-size="18" fill="#F2F2EE">Beehiiv</text>
+
+  <rect x="557" y="539" width="415" height="56" rx="4" fill="#0C0C0C"/>
+  <text x="577" y="565" font-family="'Courier New', monospace" font-size="11" fill="#888888" letter-spacing="1">PROJECTS</text>
+  <text x="577" y="584" font-family="Georgia, serif" font-size="18" fill="#F2F2EE">Notion</text>
+
+  <rect x="557" y="607" width="415" height="56" rx="4" fill="#141414"/>
+  <text x="577" y="633" font-family="'Courier New', monospace" font-size="11" fill="#888888" letter-spacing="1">AUTOMATION</text>
+  <text x="577" y="652" font-family="Georgia, serif" font-size="18" fill="#F2F2EE">Make.com</text>
+
+  <rect x="557" y="675" width="415" height="56" rx="4" fill="#0C0C0C"/>
+  <text x="577" y="701" font-family="'Courier New', monospace" font-size="11" fill="#888888" letter-spacing="1">SOCIAL</text>
+  <text x="577" y="720" font-family="Georgia, serif" font-size="18" fill="#F2F2EE">Buffer</text>
+
+  <!-- RIGHT total -->
+  <rect x="557" y="743" width="415" height="60" rx="4" fill="#0D1A00"/>
+  <rect x="557" y="743" width="4" height="60" fill="#D4FF00"/>
+  <text x="577" y="768" font-family="'Courier New', monospace" font-size="12" fill="#D4FF00" letter-spacing="1">TOTAL / MONTH</text>
+  <text x="577" y="793" font-family="Georgia, serif" font-size="28" fill="#D4FF00" font-weight="bold">$15–92</text>
+
+  <!-- Rule -->
+  <rect x="108" y="836" width="864" height="72" rx="4" fill="#141414"/>
+  <rect x="108" y="836" width="4" height="72" fill="#D4FF00"/>
+  <text x="128" y="862" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">THE RULE</text>
+  <text x="128" y="890" font-family="Georgia, serif" font-size="20" fill="#F2F2EE">New tool in = old tool audited for overlap.</text>
+
+  <!-- Footer -->
+  <text x="111" y="1055" font-family="'Courier New', monospace" font-size="14" fill="#555555">leveragedbuilder.com</text>
+  <text x="972" y="1055" font-family="Georgia, serif" font-size="28" fill="#242424" text-anchor="end" font-weight="bold">LB</text>
+</svg>

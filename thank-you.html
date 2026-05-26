@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're In — The Leveraged Builder</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230C0C0C'/><text y='.9em' font-size='80' x='10' fill='%23D4FF00' font-family='monospace' font-weight='bold'>LB</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .confirm-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+    }
+    .confirm-inner { max-width: 560px; }
+    .confirm-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 255, 0, 0.1);
+      border: 1px solid rgba(212, 255, 0, 0.3);
+      color: var(--yellow);
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+    .confirm-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--yellow);
+      border-radius: 50%;
+    }
+    .confirm-page h1 {
+      font-size: clamp(2.5rem, 7vw, 4rem);
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .confirm-page h1 span { color: var(--yellow); }
+    .confirm-page .lead {
+      font-size: 1.1rem;
+      color: var(--gray);
+      max-width: 440px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .confirm-steps {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+    .confirm-steps h3 {
+      font-size: 0.75rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+    .step-item {
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step-item:last-child { border-bottom: none; }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: rgba(212, 255, 0, 0.1);
+      border: 1px solid rgba(212, 255, 0, 0.2);
+      color: var(--yellow);
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .step-text strong {
+      display: block;
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+    .step-text span {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+    .confirm-ctas {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="confirm-page">
+    <div class="confirm-inner">
+      <div class="confirm-badge">You're on the list</div>
+      <h1>Welcome to the<br><span>Builder's side.</span></h1>
+      <p class="lead">Your free AI Stack is on its way. Check your inbox — and add hello@leveragedbuilder.com to your contacts so nothing lands in spam.</p>
+
+      <div class="confirm-steps">
+        <h3>What happens next</h3>
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <div class="step-text">
+            <strong>Check your inbox</strong>
+            <span>The AI Stack PDF arrives in the next few minutes.</span>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <div class="step-text">
+            <strong>Add us to contacts</strong>
+            <span>hello@leveragedbuilder.com — keeps future issues out of spam.</span>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <div class="step-text">
+            <strong>Every Monday morning</strong>
+            <span>The AI Leverage Brief lands in your inbox. One workflow, one system, one honest update.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="confirm-ctas">
+        <a href="/" class="btn btn--primary">Explore the site →</a>
+        <a href="resources.html" class="btn btn--outline">See the AI Stack</a>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

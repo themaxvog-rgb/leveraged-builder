@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="#0C0C0C"/>
+
+  <!-- Top yellow bar -->
+  <rect x="0" y="0" width="1080" height="4" fill="#D4FF00"/>
+  <!-- Bottom yellow bar -->
+  <rect x="0" y="1076" width="1080" height="4" fill="#D4FF00"/>
+  <!-- Left vertical line -->
+  <rect x="80" y="80" width="3" height="920" fill="#FFFFFF" opacity="0.2"/>
+
+  <!-- Eyebrow badge -->
+  <rect x="108" y="100" width="224" height="36" rx="4" fill="#D4FF00" opacity="0.12"/>
+  <text x="220" y="124" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" text-anchor="middle" letter-spacing="2">UPGRADE PATH</text>
+
+  <!-- Main title -->
+  <text x="108" y="215" font-family="Georgia, serif" font-size="52" fill="#F2F2EE" font-weight="bold">Don't add tools</text>
+  <text x="108" y="278" font-family="Georgia, serif" font-size="52" fill="#F2F2EE" font-weight="bold">to feel productive.</text>
+  <text x="108" y="341" font-family="Georgia, serif" font-size="36" fill="#888888">Add them when you hit</text>
+  <text x="108" y="385" font-family="Georgia, serif" font-size="36" fill="#D4FF00">a specific bottleneck.</text>
+
+  <!-- Divider -->
+  <rect x="108" y="415" width="864" height="1" fill="#242424"/>
+
+  <!-- Step 01 -->
+  <rect x="108" y="435" width="864" height="80" rx="4" fill="#141414"/>
+  <text x="128" y="467" font-family="'Courier New', monospace" font-size="28" fill="#D4FF00" font-weight="bold">01</text>
+  <text x="192" y="462" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">FIRST $100/MONTH PROFIT</text>
+  <text x="192" y="487" font-family="Georgia, serif" font-size="20" fill="#F2F2EE">Make.com ($9) + Buffer ($6) — automation first</text>
+  <text x="940" y="480" font-family="'Courier New', monospace" font-size="18" fill="#D4FF00" text-anchor="end">$15</text>
+
+  <!-- Step 02 -->
+  <rect x="108" y="527" width="864" height="80" rx="4" fill="#0C0C0C"/>
+  <text x="128" y="559" font-family="'Courier New', monospace" font-size="28" fill="#D4FF00" font-weight="bold">02</text>
+  <text x="192" y="554" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">FIRST $500/MONTH PROFIT</text>
+  <text x="192" y="579" font-family="Georgia, serif" font-size="20" fill="#F2F2EE">Beehiiv paid — analytics + monetization</text>
+  <text x="940" y="572" font-family="'Courier New', monospace" font-size="18" fill="#D4FF00" text-anchor="end">$49</text>
+
+  <!-- Step 03 -->
+  <rect x="108" y="619" width="864" height="80" rx="4" fill="#141414"/>
+  <text x="128" y="651" font-family="'Courier New', monospace" font-size="28" fill="#D4FF00" font-weight="bold">03</text>
+  <text x="192" y="646" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">FIRST $1,000/MONTH PROFIT</text>
+  <text x="192" y="671" font-family="Georgia, serif" font-size="20" fill="#F2F2EE">Claude Pro + Perplexity Pro — content quality</text>
+  <text x="940" y="664" font-family="'Courier New', monospace" font-size="18" fill="#D4FF00" text-anchor="end">$40</text>
+
+  <!-- Step 04 -->
+  <rect x="108" y="711" width="864" height="80" rx="4" fill="#0C0C0C"/>
+  <text x="128" y="743" font-family="'Courier New', monospace" font-size="28" fill="#D4FF00" font-weight="bold">04</text>
+  <text x="192" y="738" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">FIRST $2,000/MONTH PROFIT</text>
+  <text x="192" y="763" font-family="Georgia, serif" font-size="20" fill="#F2F2EE">ElevenLabs + Descript — only if producing video</text>
+  <text x="940" y="756" font-family="'Courier New', monospace" font-size="18" fill="#D4FF00" text-anchor="end">$17</text>
+
+  <!-- Conclusion card -->
+  <rect x="108" y="820" width="864" height="100" rx="4" fill="#D4FF00"/>
+  <text x="540" y="860" font-family="Georgia, serif" font-size="26" fill="#0C0C0C" text-anchor="middle" font-weight="bold">The sequence matters more</text>
+  <text x="540" y="896" font-family="Georgia, serif" font-size="26" fill="#0C0C0C" text-anchor="middle" font-weight="bold">than the tools.</text>
+
+  <!-- Footer -->
+  <text x="111" y="1055" font-family="'Courier New', monospace" font-size="14" fill="#555555">leveragedbuilder.com</text>
+  <text x="972" y="1055" font-family="Georgia, serif" font-size="28" fill="#242424" text-anchor="end" font-weight="bold">LB</text>
+</svg>

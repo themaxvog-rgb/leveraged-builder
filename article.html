@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Complete AI Content Pipeline — The Leveraged Builder</title>
+  <meta name="description" content="A full breakdown of the AI-powered system I use to research, write, edit, and distribute content across 5 platforms in under 10 hours a week." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230C0C0C'/><text y='.9em' font-size='80' x='10' fill='%23D4FF00' font-family='monospace' font-weight='bold'>LB</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .article-hero { padding: 140px 0 60px; }
+    .article-hero .tag {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      background: rgba(212,255,0,0.1);
+      padding: 5px 12px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .article-hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      max-width: 800px;
+      margin-bottom: 24px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 0.875rem;
+      color: var(--gray);
+      flex-wrap: wrap;
+    }
+    .article-meta .dot { width: 4px; height: 4px; background: var(--border); border-radius: 50%; }
+
+    /* Layout */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* Content */
+    .article-content { max-width: 680px; }
+    .article-content .lead {
+      font-size: 1.125rem;
+      color: var(--white);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-content h2 {
+      font-size: 1.5rem;
+      color: var(--white);
+      margin: 48px 0 16px;
+    }
+    .article-content h3 {
+      font-size: 1.15rem;
+      color: var(--white);
+      margin: 32px 0 12px;
+    }
+    .article-content p { font-size: 1rem; margin-bottom: 20px; line-height: 1.8; }
+    .article-content ul, .article-content ol {
+      padding-left: 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .article-content li { font-size: 1rem; color: var(--gray); line-height: 1.7; }
+    .article-content strong { color: var(--white); font-weight: 600; }
+    .article-content a { color: var(--yellow); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Callout box */
+    .callout {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--yellow);
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+    .callout__label {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 8px;
+    }
+    .callout p { font-size: 0.9375rem; margin: 0; color: var(--white); }
+
+    /* Code block */
+    .code-block {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.8125rem;
+      color: var(--gray);
+      line-height: 1.7;
+      white-space: pre-wrap;
+      margin: 24px 0;
+      overflow-x: auto;
+    }
+
+    /* Sidebar */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    .sidebar-card h4 {
+      font-size: 0.875rem;
+      color: var(--white);
+      margin-bottom: 16px;
+      font-family: var(--font-display);
+    }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .toc-list a {
+      font-size: 0.8125rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .toc-list a::before { content: '·'; color: var(--yellow); font-weight: 700; }
+    .toc-list a:hover { color: var(--white); }
+
+    .newsletter-sidebar { background: var(--yellow); border: none; }
+    .newsletter-sidebar h4 { color: var(--black); }
+    .newsletter-sidebar p { font-size: 0.8125rem; color: rgba(0,0,0,0.6); margin-bottom: 16px; }
+    .newsletter-sidebar input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(0,0,0,0.12);
+      color: var(--black);
+      font-size: 0.8125rem;
+      margin-bottom: 10px;
+      outline: none;
+    }
+    .newsletter-sidebar input::placeholder { color: rgba(0,0,0,0.4); }
+    .newsletter-sidebar button {
+      width: 100%;
+      padding: 10px;
+      background: var(--black);
+      color: var(--yellow);
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.8125rem;
+      cursor: pointer;
+    }
+
+    /* Related articles */
+    .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 32px; }
+    .related-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .related-card:hover { border-color: rgba(212,255,0,0.3); transform: translateY(-2px); }
+    .related-card__tag { font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--yellow); margin-bottom: 10px; display: block; }
+    .related-card__title { font-family: var(--font-display); font-weight: 700; color: var(--white); font-size: 0.9375rem; line-height: 1.3; }
+
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-sidebar { position: static; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">The <span>Leveraged</span> Builder</a>
+        <ul class="nav__links">
+          <li><a href="blog.html" style="color:var(--white)">Articles</a></li>
+          <li><a href="/#newsletter">Newsletter</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="/#newsletter" class="nav__cta">Join Free →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Article Hero -->
+  <header class="article-hero">
+    <div class="container">
+      <span class="tag">AI Workflows</span>
+      <h1>The Complete AI Content Pipeline: How to Produce 5x More With Half the Effort</h1>
+      <div class="article-meta">
+        <span>May 26, 2025</span>
+        <span class="dot"></span>
+        <span>8 min read</span>
+        <span class="dot"></span>
+        <span>The Leveraged Builder</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Main content -->
+        <article class="article-content">
+
+          <p class="lead">Most content creators spend 80% of their time on production and 20% on strategy. The result: burnout, inconsistency, and mediocre output. Here's the system I built that flips that ratio — using AI as the production backbone so I can focus entirely on what actually moves the needle.</p>
+
+          <h2>The Problem With Traditional Content Production</h2>
+          <p>Before building this system, my content process looked like most people's: an idea, a blank document, hours of writing, more hours of editing, then scrambling to repurpose it manually across platforms. A single YouTube video took 12+ hours from concept to publish.</p>
+          <p>The math doesn't work. At that rate, you can produce maybe 4 pieces of content a month — not nearly enough to build an audience in 2025.</p>
+
+          <div class="callout">
+            <div class="callout__label">The core insight</div>
+            <p>AI doesn't replace your thinking. It replaces the 70% of production work that doesn't require your thinking — research, first drafts, formatting, repurposing, scheduling.</p>
+          </div>
+
+          <h2>The 5-Stage Pipeline</h2>
+
+          <h3>Stage 1: Trend Research (20 min/week)</h3>
+          <p>Every Monday morning, I run this Perplexity prompt to identify the week's most relevant topics:</p>
+          <div class="code-block">What are the top 5 emerging trends in AI tools for entrepreneurs and
+one-person businesses this week? For each trend:
+- Summarize it in 2 sentences
+- Rate its relevance for solo operators (1-10)
+- Suggest one content angle that hasn't been covered yet</div>
+          <p>Output: a prioritized list of 5 topics, ready for content briefing.</p>
+
+          <h3>Stage 2: Script Generation (30 min/piece)</h3>
+          <p>I feed the chosen topic into Claude with my master script prompt. The output is a full YouTube script — hook, body, CTA — in about 10 minutes. I spend 20 minutes refining it with my actual experience and specific data points.</p>
+          <p><strong>Key principle:</strong> AI writes the structure. I add the truth.</p>
+
+          <h3>Stage 3: Multi-Format Repurposing (20 min/piece)</h3>
+          <p>Once the script is locked, I run the repurposing prompt that generates:</p>
+          <ul>
+            <li>3 TikTok/Reels scripts (different hooks, same core idea)</li>
+            <li>1 Twitter/X thread</li>
+            <li>5 Instagram captions</li>
+            <li>1 newsletter section</li>
+          </ul>
+          <p>One piece of thinking becomes 10+ pieces of content. That's the leverage.</p>
+
+          <h3>Stage 4: Production (2 hrs/week)</h3>
+          <p>With scripts ready, production is mechanical:</p>
+          <ul>
+            <li>Long-form: screen recording + ElevenLabs voiceover + Descript edit</li>
+            <li>Short-form: CapCut with auto-captions + template</li>
+            <li>Thumbnails: Midjourney prompt → Canva template</li>
+          </ul>
+
+          <h3>Stage 5: Distribution via Make.com (0 min — automated)</h3>
+          <p>A Make.com scenario monitors my Notion content database. When a piece is marked "Ready," it automatically pushes to Buffer for scheduling across all platforms, sends the newsletter via Beehiiv, and logs everything to the analytics dashboard.</p>
+          <p><strong>Total human time required: zero.</strong></p>
+
+          <div class="callout">
+            <div class="callout__label">Weekly time breakdown</div>
+            <p>Strategy & research: 2 hrs · Script generation: 1 hr · Production: 4 hrs · Distribution: 0 hrs (automated) · Analytics review: 1 hr · <strong>Total: ~8 hours for 10+ pieces of content.</strong></p>
+          </div>
+
+          <h2>The Tools (Full Stack)</h2>
+          <ul>
+            <li><strong>Perplexity</strong> — trend research and topic discovery</li>
+            <li><strong>Claude</strong> — scripts, repurposing, newsletter drafts</li>
+            <li><strong>ElevenLabs</strong> — voiceover generation</li>
+            <li><strong>Descript</strong> — long-form video editing</li>
+            <li><strong>CapCut</strong> — short-form editing</li>
+            <li><strong>Midjourney</strong> — thumbnails and visuals</li>
+            <li><strong>Make.com</strong> — full pipeline automation</li>
+            <li><strong>Buffer</strong> — multi-platform scheduling</li>
+            <li><strong>Beehiiv</strong> — newsletter distribution</li>
+          </ul>
+          <p>Total cost: ~$150/month. Value of time saved: 20+ hours/week.</p>
+
+          <h2>The Result</h2>
+          <p>After 60 days running this system: output went from 4 pieces/month to 40+. Newsletter grew from 0 to 2,400 subscribers. YouTube channel hit 500 subscribers in the first month. And I spent less time on content than I did before.</p>
+          <p>That's what leverage actually looks like.</p>
+
+          <!-- Article CTA -->
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px;margin-top:48px;text-align:center;">
+            <p style="font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px;">Get the full system</p>
+            <h3 style="color:var(--white);font-size:1.4rem;margin-bottom:12px;">Every workflow, every prompt, every week.</h3>
+            <p style="margin-bottom:24px;">Join the newsletter and get the complete AI Stack — tools, prompts, and setup guide — free.</p>
+            <form class="newsletter-form-js" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;" novalidate>
+              <input type="email" placeholder="Your email" required style="padding:14px 18px;background:var(--steel);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:0.9rem;outline:none;min-width:220px;" />
+              <button type="submit" class="btn btn--primary">Join Free →</button>
+            </form>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+
+          <div class="sidebar-card">
+            <h4>In this article</h4>
+            <ul class="toc-list">
+              <li><a href="#">The Problem</a></li>
+              <li><a href="#">Stage 1: Research</a></li>
+              <li><a href="#">Stage 2: Scripts</a></li>
+              <li><a href="#">Stage 3: Repurposing</a></li>
+              <li><a href="#">Stage 4: Production</a></li>
+              <li><a href="#">Stage 5: Automation</a></li>
+              <li><a href="#">The Full Stack</a></li>
+              <li><a href="#">Results</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card newsletter-sidebar">
+            <h4>The AI Leverage Brief</h4>
+            <p>Weekly workflows, systems, and numbers — straight to your inbox.</p>
+            <form class="newsletter-form-js" novalidate>
+              <input type="email" placeholder="Your email" required />
+              <button type="submit">Join Free →</button>
+            </form>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>Tools mentioned</h4>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+              <a href="resources.html" style="font-size:0.8125rem;color:var(--gray);display:flex;align-items:center;gap:8px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'"><span style="color:var(--yellow)">→</span> Claude</a>
+              <a href="resources.html" style="font-size:0.8125rem;color:var(--gray);display:flex;align-items:center;gap:8px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'"><span style="color:var(--yellow)">→</span> Perplexity</a>
+              <a href="resources.html" style="font-size:0.8125rem;color:var(--gray);display:flex;align-items:center;gap:8px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'"><span style="color:var(--yellow)">→</span> Make.com</a>
+              <a href="resources.html" style="font-size:0.8125rem;color:var(--gray);display:flex;align-items:center;gap:8px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'"><span style="color:var(--yellow)">→</span> ElevenLabs</a>
+              <a href="resources.html" style="font-size:0.8125rem;color:var(--gray);display:flex;align-items:center;gap:8px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'"><span style="color:var(--yellow)">→</span> Descript</a>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+
+      <!-- Related articles -->
+      <div style="margin-top:80px;padding-top:60px;border-top:1px solid var(--border);">
+        <h3 style="color:var(--white);margin-bottom:8px;">Continue reading</h3>
+        <p style="margin-bottom:0;">More frameworks and workflows from The Leveraged Builder.</p>
+        <div class="related-grid">
+          <a href="article.html" class="related-card">
+            <span class="related-card__tag">Business Systems</span>
+            <div class="related-card__title">The One-Person Agency Model That Actually Scales</div>
+          </a>
+          <a href="article.html" class="related-card">
+            <span class="related-card__tag">Operator Mindset</span>
+            <div class="related-card__title">Stop Being Productive. Start Being Leveraged.</div>
+          </a>
+          <a href="article.html" class="related-card">
+            <span class="related-card__tag">AI Workflows</span>
+            <div class="related-card__title">5 AI Tools That Replaced $3,000/Month in Team Costs</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:1px solid var(--border);padding-top:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <p class="footer__copy">© 2025 The Leveraged Builder.</p>
+        <a href="blog.html" style="font-size:0.875rem;color:var(--gray);">← All articles</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

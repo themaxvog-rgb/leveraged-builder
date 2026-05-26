@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="#0C0C0C"/>
+
+  <!-- Top yellow bar -->
+  <rect x="0" y="0" width="1080" height="4" fill="#D4FF00"/>
+  <!-- Bottom yellow bar -->
+  <rect x="0" y="1076" width="1080" height="4" fill="#D4FF00"/>
+  <!-- Left vertical line -->
+  <rect x="80" y="80" width="3" height="920" fill="#FFFFFF" opacity="0.2"/>
+
+  <!-- Eyebrow badge -->
+  <rect x="108" y="100" width="220" height="36" rx="4" fill="#D4FF00" opacity="0.12"/>
+  <text x="218" y="124" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" text-anchor="middle" letter-spacing="2">BUSINESS SYSTEMS</text>
+
+  <!-- Main title -->
+  <text x="108" y="210" font-family="Georgia, serif" font-size="64" fill="#F2F2EE" font-weight="bold">$200/month.</text>
+  <text x="108" y="285" font-family="Georgia, serif" font-size="64" fill="#F2F2EE" font-weight="bold">Full stack.</text>
+  <text x="108" y="360" font-family="Georgia, serif" font-size="64" fill="#D4FF00" font-weight="bold">One person.</text>
+
+  <!-- Divider -->
+  <rect x="108" y="400" width="864" height="1" fill="#242424"/>
+
+  <!-- Stack rows -->
+  <!-- Row 1 — Acquire -->
+  <rect x="108" y="430" width="864" height="72" rx="4" fill="#141414"/>
+  <rect x="108" y="430" width="4" height="72" fill="#D4FF00"/>
+  <text x="128" y="461" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">ACQUIRE</text>
+  <text x="128" y="485" font-family="Georgia, serif" font-size="22" fill="#F2F2EE">Beehiiv</text>
+  <text x="940" y="473" font-family="'Courier New', monospace" font-size="20" fill="#D4FF00" text-anchor="end">$0–49</text>
+
+  <!-- Row 2 — Deliver -->
+  <rect x="108" y="514" width="864" height="72" rx="4" fill="#0C0C0C"/>
+  <rect x="108" y="514" width="4" height="72" fill="#D4FF00" opacity="0.4"/>
+  <text x="128" y="545" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">DELIVER</text>
+  <text x="128" y="569" font-family="Georgia, serif" font-size="22" fill="#F2F2EE">Notion</text>
+  <text x="940" y="557" font-family="'Courier New', monospace" font-size="20" fill="#D4FF00" text-anchor="end">$0–16</text>
+
+  <!-- Row 3 — Communicate -->
+  <rect x="108" y="598" width="864" height="72" rx="4" fill="#141414"/>
+  <rect x="108" y="598" width="4" height="72" fill="#D4FF00"/>
+  <text x="128" y="629" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">COMMUNICATE</text>
+  <text x="128" y="653" font-family="Georgia, serif" font-size="22" fill="#F2F2EE">Gmail + Calendly</text>
+  <text x="940" y="641" font-family="'Courier New', monospace" font-size="20" fill="#D4FF00" text-anchor="end">$0–18</text>
+
+  <!-- Row 4 — Automate -->
+  <rect x="108" y="682" width="864" height="72" rx="4" fill="#0C0C0C"/>
+  <rect x="108" y="682" width="4" height="72" fill="#D4FF00" opacity="0.4"/>
+  <text x="128" y="713" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">AUTOMATE</text>
+  <text x="128" y="737" font-family="Georgia, serif" font-size="22" fill="#F2F2EE">Make.com</text>
+  <text x="940" y="725" font-family="'Courier New', monospace" font-size="20" fill="#D4FF00" text-anchor="end">$9</text>
+
+  <!-- Row 5 — Track -->
+  <rect x="108" y="766" width="864" height="72" rx="4" fill="#141414"/>
+  <rect x="108" y="766" width="4" height="72" fill="#D4FF00"/>
+  <text x="128" y="797" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">TRACK</text>
+  <text x="128" y="821" font-family="Georgia, serif" font-size="22" fill="#F2F2EE">Google Analytics + Sheets</text>
+  <text x="940" y="809" font-family="'Courier New', monospace" font-size="20" fill="#D4FF00" text-anchor="end">$0</text>
+
+  <!-- Total -->
+  <rect x="108" y="854" width="864" height="72" rx="4" fill="#D4FF00"/>
+  <text x="128" y="885" font-family="'Courier New', monospace" font-size="13" fill="#0C0C0C" letter-spacing="1">TOTAL</text>
+  <text x="128" y="909" font-family="Georgia, serif" font-size="24" fill="#0C0C0C" font-weight="bold">Minimum viable stack</text>
+  <text x="940" y="897" font-family="Georgia, serif" font-size="28" fill="#0C0C0C" font-weight="bold" text-anchor="end">$15–92</text>
+
+  <!-- Footer -->
+  <text x="111" y="1055" font-family="'Courier New', monospace" font-size="14" fill="#555555">leveragedbuilder.com</text>
+  <text x="972" y="1055" font-family="Georgia, serif" font-size="28" fill="#242424" text-anchor="end" font-weight="bold">LB</text>
+</svg>
