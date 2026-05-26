@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#0C0C0C"/>
+  <rect x="0" y="0" width="1080" height="4" fill="#D4FF00"/>
+  <rect x="0" y="1076" width="1080" height="4" fill="#D4FF00"/>
+  <rect x="80" y="80" width="3" height="920" fill="#FFFFFF" opacity="0.2"/>
+
+  <!-- Eyebrow -->
+  <rect x="108" y="100" width="260" height="36" rx="4" fill="#D4FF00" opacity="0.12"/>
+  <text x="238" y="124" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" text-anchor="middle" letter-spacing="2">OPERATOR MINDSET</text>
+
+  <!-- Main headline -->
+  <text x="108" y="240" font-family="Georgia, serif" font-size="68" fill="#F2F2EE" font-weight="bold">You're not</text>
+  <text x="108" y="320" font-family="Georgia, serif" font-size="68" fill="#F2F2EE" font-weight="bold">too busy.</text>
+  <text x="108" y="430" font-family="Georgia, serif" font-size="52" fill="#D4FF00" font-weight="bold">You're busy at</text>
+  <text x="108" y="500" font-family="Georgia, serif" font-size="52" fill="#D4FF00" font-weight="bold">the wrong things.</text>
+
+  <rect x="108" y="540" width="864" height="1" fill="#242424"/>
+
+  <!-- Three types -->
+  <rect x="108" y="560" width="864" height="70" rx="4" fill="#141414"/>
+  <text x="128" y="588" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" letter-spacing="1">01</text>
+  <text x="168" y="588" font-family="Georgia, serif" font-size="22" fill="#F2F2EE">Leverage work</text>
+  <text x="168" y="614" font-family="'Courier New', monospace" font-size="14" fill="#888888">strategy · decisions · key relationships</text>
+
+  <rect x="108" y="642" width="864" height="70" rx="4" fill="#0C0C0C"/>
+  <text x="128" y="670" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" letter-spacing="1">02</text>
+  <text x="168" y="670" font-family="Georgia, serif" font-size="22" fill="#F2F2EE">Systems work</text>
+  <text x="168" y="696" font-family="'Courier New', monospace" font-size="14" fill="#888888">automations · templates · processes</text>
+
+  <rect x="108" y="724" width="864" height="70" rx="4" fill="#141414"/>
+  <text x="128" y="752" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">03</text>
+  <text x="168" y="752" font-family="Georgia, serif" font-size="22" fill="#555555" text-decoration="line-through">Zombie work</text>
+  <text x="168" y="778" font-family="'Courier New', monospace" font-size="14" fill="#555555">tasks that never should've been on your agenda</text>
+
+  <!-- Bottom callout -->
+  <rect x="108" y="818" width="864" height="90" rx="4" fill="#141414"/>
+  <rect x="108" y="818" width="4" height="90" fill="#D4FF00"/>
+  <text x="128" y="850" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">MOST ENTREPRENEURS</text>
+  <text x="128" y="878" font-family="Georgia, serif" font-size="26" fill="#F2F2EE">20% leverage · <tspan fill="#D4FF00">80% zombie</tspan></text>
+
+  <text x="111" y="1055" font-family="'Courier New', monospace" font-size="14" fill="#555555">leveragedbuilder.com</text>
+  <text x="969" y="1055" font-family="Georgia, serif" font-size="28" fill="#242424" text-anchor="end" font-weight="bold">LB</text>
+</svg>

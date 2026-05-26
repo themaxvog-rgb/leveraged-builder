@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#0C0C0C"/>
+  <rect x="0" y="0" width="1080" height="4" fill="#D4FF00"/>
+  <rect x="0" y="1076" width="1080" height="4" fill="#D4FF00"/>
+  <rect x="80" y="80" width="3" height="920" fill="#FFFFFF" opacity="0.2"/>
+
+  <!-- Eyebrow -->
+  <rect x="108" y="100" width="200" height="36" rx="4" fill="#D4FF00" opacity="0.12"/>
+  <text x="208" y="124" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" text-anchor="middle" letter-spacing="2">AI + LEVERAGE</text>
+
+  <!-- Headline -->
+  <text x="108" y="230" font-family="Georgia, serif" font-size="52" fill="#F2F2EE" font-weight="bold">Most people use AI</text>
+  <text x="108" y="295" font-family="Georgia, serif" font-size="52" fill="#F2F2EE" font-weight="bold">to go <tspan fill="#888888">faster.</tspan></text>
+  <text x="108" y="390" font-family="Georgia, serif" font-size="52" fill="#D4FF00" font-weight="bold">Operators use it to</text>
+  <text x="108" y="455" font-family="Georgia, serif" font-size="52" fill="#D4FF00" font-weight="bold">eliminate work.</text>
+
+  <rect x="108" y="490" width="864" height="1" fill="#242424"/>
+
+  <!-- Comparison rows -->
+  <rect x="108" y="508" width="864" height="68" rx="4" fill="#141414"/>
+  <text x="128" y="534" font-family="'Courier New', monospace" font-size="13" fill="#888888">OPTIMIZATION (most people)</text>
+  <text x="128" y="560" font-family="Georgia, serif" font-size="22" fill="#888888">"How do I write this email faster?"</text>
+
+  <rect x="108" y="588" width="864" height="68" rx="4" fill="#0C0C0C"/>
+  <text x="128" y="614" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00">LEVERAGE (operators)</text>
+  <text x="128" y="640" font-family="Georgia, serif" font-size="22" fill="#F2F2EE">"How do I never write this type of email again?"</text>
+
+  <!-- What gets eliminated -->
+  <text x="108" y="706" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">CATEGORIES ELIMINATED WITH AI</text>
+
+  <rect x="108" y="718" width="416" height="56" rx="4" fill="#141414"/>
+  <text x="128" y="748" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">Social scheduling</text>
+  <text x="512" y="748" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" text-anchor="end">✓ eliminated</text>
+
+  <rect x="536" y="718" width="436" height="56" rx="4" fill="#141414"/>
+  <text x="556" y="748" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">Newsletter drafting</text>
+  <text x="960" y="748" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" text-anchor="end">✓ eliminated</text>
+
+  <rect x="108" y="786" width="416" height="56" rx="4" fill="#0C0C0C"/>
+  <text x="128" y="816" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">Research</text>
+  <text x="512" y="816" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" text-anchor="end">✓ eliminated</text>
+
+  <rect x="536" y="786" width="436" height="56" rx="4" fill="#0C0C0C"/>
+  <text x="556" y="816" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">Content formatting</text>
+  <text x="960" y="816" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" text-anchor="end">✓ eliminated</text>
+
+  <!-- Bottom -->
+  <rect x="108" y="862" width="864" height="72" rx="4" fill="#141414"/>
+  <rect x="108" y="862" width="4" height="72" fill="#D4FF00"/>
+  <text x="128" y="892" font-family="'Courier New', monospace" font-size="13" fill="#888888" letter-spacing="1">THE GOAL</text>
+  <text x="128" y="920" font-family="Georgia, serif" font-size="24" fill="#F2F2EE">Not efficient at tasks. <tspan fill="#D4FF00">Invisible tasks.</tspan></text>
+
+  <text x="111" y="1055" font-family="'Courier New', monospace" font-size="14" fill="#555555">leveragedbuilder.com</text>
+  <text x="969" y="1055" font-family="Georgia, serif" font-size="28" fill="#242424" text-anchor="end" font-weight="bold">LB</text>
+</svg>
