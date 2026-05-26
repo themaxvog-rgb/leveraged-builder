@@ -17,24 +17,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Newsletter forms — Beehiiv integration
-function handleNewsletterSubmit(e) {
-  e.preventDefault();
-  const form = e.currentTarget;
-  const email = form.querySelector('input[type="email"]').value.trim();
-  if (!email) return;
-
-  const btn = form.querySelector('button[type="submit"]');
-  btn.textContent = 'Joining...';
-  btn.disabled = true;
-
-  // Redirect to Beehiiv subscribe page with email pre-filled
-  window.location.href = 'https://leveragedbuilder.beehiiv.com/subscribe?email=' + encodeURIComponent(email);
-}
-
-document.querySelectorAll('.newsletter-form-js').forEach(form => {
-  form.addEventListener('submit', handleNewsletterSubmit);
-});
+// Newsletter forms handled by Beehiiv native embed (loader.js)
 
 // Hamburger menu
 const hamburger = document.querySelector('.nav__hamburger');
