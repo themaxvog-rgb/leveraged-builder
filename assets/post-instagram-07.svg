@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#0C0C0C"/>
+  <rect x="0" y="0" width="1080" height="4" fill="#D4FF00"/>
+  <rect x="0" y="1076" width="1080" height="4" fill="#D4FF00"/>
+  <rect x="80" y="80" width="3" height="920" fill="#FFFFFF" opacity="0.2"/>
+
+  <!-- Eyebrow -->
+  <rect x="108" y="100" width="188" height="36" rx="4" fill="#D4FF00" opacity="0.12"/>
+  <text x="202" y="124" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" text-anchor="middle" letter-spacing="2">THE BUILD</text>
+
+  <!-- Title -->
+  <text x="108" y="210" font-family="Georgia, serif" font-size="52" fill="#F2F2EE" font-weight="bold">14 days.</text>
+  <text x="108" y="272" font-family="Georgia, serif" font-size="52" fill="#D4FF00" font-weight="bold">Full build log.</text>
+
+  <rect x="108" y="300" width="864" height="1" fill="#242424"/>
+
+  <!-- Week 1 header -->
+  <rect x="108" y="318" width="864" height="36" rx="4" fill="#1A1A00"/>
+  <text x="128" y="342" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" letter-spacing="2">WEEK 1 — INFRASTRUCTURE</text>
+
+  <!-- Week 1 items -->
+  <text x="128" y="378" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">→ 7-page website from scratch</text>
+  <text x="128" y="406" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">→ Full brand system + design tokens</text>
+  <text x="128" y="434" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">→ Article + Newsletter + X thread</text>
+  <text x="128" y="462" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">→ 3 Instagram visuals (1080×1080)</text>
+  <text x="128" y="490" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">→ All social accounts live</text>
+  <text x="940" y="440" font-family="'Courier New', monospace" font-size="18" fill="#888888" text-anchor="end">~14h</text>
+
+  <rect x="108" y="510" width="864" height="1" fill="#242424"/>
+
+  <!-- Week 2 header -->
+  <rect x="108" y="520" width="864" height="36" rx="4" fill="#1A1A00"/>
+  <text x="128" y="544" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" letter-spacing="2">WEEK 2 — SYSTEMS</text>
+
+  <!-- Week 2 items -->
+  <text x="128" y="580" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">→ Second full content week</text>
+  <text x="128" y="608" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">→ GitHub + Netlify auto-deploy</text>
+  <text x="128" y="636" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">→ 3 affiliate programs live</text>
+  <text x="128" y="664" font-family="Georgia, serif" font-size="19" fill="#F2F2EE">→ Autonomous content pipeline built</text>
+  <text x="940" y="632" font-family="'Courier New', monospace" font-size="18" fill="#888888" text-anchor="end">~8h</text>
+
+  <rect x="108" y="690" width="864" height="1" fill="#242424"/>
+
+  <!-- Total card -->
+  <rect x="108" y="706" width="864" height="88" rx="4" fill="#D4FF00"/>
+  <text x="540" y="742" font-family="'Courier New', monospace" font-size="14" fill="#0C0C0C" text-anchor="middle" letter-spacing="2">TOTAL ACTIVE TIME</text>
+  <text x="540" y="778" font-family="Georgia, serif" font-size="36" fill="#0C0C0C" text-anchor="middle" font-weight="bold">~22 hours across 14 days</text>
+
+  <!-- Sub note -->
+  <text x="540" y="840" font-family="Georgia, serif" font-size="20" fill="#555555" text-anchor="middle">Built from São Paulo. No face. No ads. Just systems.</text>
+
+  <text x="111" y="1055" font-family="'Courier New', monospace" font-size="14" fill="#555555">leveragedbuilder.com</text>
+  <text x="972" y="1055" font-family="Georgia, serif" font-size="28" fill="#242424" text-anchor="end" font-weight="bold">LB</text>
+</svg>

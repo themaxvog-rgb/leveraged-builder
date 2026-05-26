@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#0C0C0C"/>
+  <rect x="0" y="0" width="1080" height="4" fill="#D4FF00"/>
+  <rect x="0" y="1076" width="1080" height="4" fill="#D4FF00"/>
+  <rect x="80" y="80" width="3" height="920" fill="#FFFFFF" opacity="0.2"/>
+
+  <!-- Eyebrow -->
+  <rect x="108" y="100" width="244" height="36" rx="4" fill="#D4FF00" opacity="0.12"/>
+  <text x="230" y="124" font-family="'Courier New', monospace" font-size="13" fill="#D4FF00" text-anchor="middle" letter-spacing="2">KEY DECISIONS</text>
+
+  <!-- Title -->
+  <text x="108" y="210" font-family="Georgia, serif" font-size="52" fill="#F2F2EE" font-weight="bold">3 decisions that</text>
+  <text x="108" y="272" font-family="Georgia, serif" font-size="52" fill="#D4FF00" font-weight="bold">changed the build.</text>
+
+  <rect x="108" y="300" width="864" height="1" fill="#242424"/>
+
+  <!-- Decision 01 -->
+  <rect x="108" y="318" width="864" height="120" rx="4" fill="#141414"/>
+  <rect x="108" y="318" width="4" height="120" fill="#D4FF00"/>
+  <text x="136" y="358" font-family="'Courier New', monospace" font-size="32" fill="#D4FF00" font-weight="bold">01</text>
+  <text x="210" y="348" font-family="'Courier New', monospace" font-size="12" fill="#888888" letter-spacing="2">DEPLOYMENT</text>
+  <text x="210" y="374" font-family="Georgia, serif" font-size="22" fill="#F2F2EE">GitHub + Netlify auto-deploy</text>
+  <text x="210" y="400" font-family="Georgia, serif" font-size="17" fill="#888888">45 min to set up. Permanent time save.</text>
+  <text x="210" y="424" font-family="Georgia, serif" font-size="17" fill="#888888">Manual zip uploads = a job, not a system.</text>
+
+  <!-- Decision 02 -->
+  <rect x="108" y="452" width="864" height="120" rx="4" fill="#0C0C0C"/>
+  <rect x="108" y="452" width="4" height="120" fill="#D4FF00" opacity="0.5"/>
+  <text x="136" y="492" font-family="'Courier New', monospace" font-size="32" fill="#D4FF00" font-weight="bold">02</text>
+  <text x="210" y="482" font-family="'Courier New', monospace" font-size="12" fill="#888888" letter-spacing="2">FORMAT</text>
+  <text x="210" y="508" font-family="Georgia, serif" font-size="22" fill="#F2F2EE">No face on camera</text>
+  <text x="210" y="534" font-family="Georgia, serif" font-size="17" fill="#888888">Screen recordings + AI voice narration.</text>
+  <text x="210" y="558" font-family="Georgia, serif" font-size="17" fill="#888888">Brand not dependent on one person showing up.</text>
+
+  <!-- Decision 03 -->
+  <rect x="108" y="586" width="864" height="120" rx="4" fill="#141414"/>
+  <rect x="108" y="586" width="4" height="120" fill="#D4FF00"/>
+  <text x="136" y="626" font-family="'Courier New', monospace" font-size="32" fill="#D4FF00" font-weight="bold">03</text>
+  <text x="210" y="616" font-family="'Courier New', monospace" font-size="12" fill="#888888" letter-spacing="2">AUTOMATION</text>
+  <text x="210" y="642" font-family="Georgia, serif" font-size="22" fill="#F2F2EE">Make.com over Zapier</text>
+  <text x="210" y="668" font-family="Georgia, serif" font-size="17" fill="#888888">Same capability. 5x cheaper. $9 vs $49/month.</text>
+  <text x="210" y="692" font-family="Georgia, serif" font-size="17" fill="#888888">No trade-off. Just inertia keeping people on Zapier.</text>
+
+  <!-- Principle -->
+  <rect x="108" y="726" width="864" height="72" rx="4" fill="#D4FF00"/>
+  <text x="540" y="756" font-family="'Courier New', monospace" font-size="13" fill="#0C0C0C" text-anchor="middle" letter-spacing="2">THE PRINCIPLE</text>
+  <text x="540" y="784" font-family="Georgia, serif" font-size="22" fill="#0C0C0C" text-anchor="middle" font-weight="bold">Build the system before you need it.</text>
+
+  <text x="111" y="1055" font-family="'Courier New', monospace" font-size="14" fill="#555555">leveragedbuilder.com</text>
+  <text x="972" y="1055" font-family="Georgia, serif" font-size="28" fill="#242424" text-anchor="end" font-weight="bold">LB</text>
+</svg>

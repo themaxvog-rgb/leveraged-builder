@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I Built a Media Company in 2 Weeks Using AI — The Leveraged Builder</title>
+  <meta name="description" content="The full build log for The Leveraged Builder: what got built, how long it took, what worked, what failed, and the real numbers at day 14." />
+  <meta property="og:title" content="I Built a Media Company in 2 Weeks Using AI — Here's Exactly What Happened" />
+  <meta property="og:description" content="No polish. No retrospective bullshit. The actual journal: inventory, decisions, failures, and real numbers." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://leveragedbuilder.com/article-build-log-week-1-2.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230C0C0C'/><text y='.9em' font-size='80' x='10' fill='%23D4FF00' font-family='monospace' font-weight='bold'>LB</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">The <span>Leveraged</span> Builder</a>
+        <ul class="nav__links">
+          <li><a href="blog.html">Articles</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="#newsletter-cta" class="nav__cta">Join Free →</a>
+        <button class="nav__hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="container">
+      <div class="article-hero__inner">
+        <div class="article-meta">
+          <span class="article-tag">The Build</span>
+          <span class="article-meta__sep">·</span>
+          <span>7 min read</span>
+          <span class="article-meta__sep">·</span>
+          <span>The Leveraged Builder</span>
+        </div>
+        <h1 class="article-hero__title">I Built a Media Company in 2 Weeks Using AI —<br><span class="accent">Here's Exactly What Happened</span></h1>
+        <p class="article-hero__lead">No polish. No retrospective bullshit. The full build log: what got built, how long it took, the 3 decisions that mattered, what failed, and the real numbers at day 14.</p>
+        <div class="article-tools-used">
+          <span class="tools-label">Built with:</span>
+          <span class="tool-badge"><span class="dot"></span>Claude</span>
+          <span class="tool-badge"><span class="dot"></span>Beehiiv</span>
+          <span class="tool-badge"><span class="dot"></span>Make.com</span>
+          <span class="tool-badge"><span class="dot"></span>GitHub</span>
+          <span class="tool-badge"><span class="dot"></span>Netlify</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE CONTENT -->
+  <div class="article-layout">
+    <div class="container">
+      <div class="article-grid">
+
+        <!-- MAIN CONTENT -->
+        <article class="article-body">
+
+          <p class="article-intro">Two weeks ago, The Leveraged Builder didn't exist.</p>
+
+          <p>No site. No audience. No content. No systems.</p>
+
+          <p>Today: a live website with articles, a newsletter platform, Instagram posts, X threads, affiliate partnerships with 3 tools, and a GitHub-to-Netlify auto-deploy pipeline that means I can update the site without touching a file manually.</p>
+
+          <p>Here's the full build log — what was done, how long it took, what worked, and what failed. No polish. No retrospective bullshit. Just the actual journal.</p>
+
+          <h2>The Inventory: What Got Built</h2>
+
+          <div class="phase-block">
+            <div class="phase-header">
+              <span class="phase-number">W1</span>
+              <div>
+                <h3 class="phase-title">Week 1 — Infrastructure + AI Workflows</h3>
+                <span class="phase-cost">~14 hours</span>
+              </div>
+            </div>
+            <p><strong>Days 1–2: Site and brand.</strong> Complete website from scratch: home, blog, newsletter, resources, about, privacy, 404 pages. Design system with dark background, yellow accent, consistent component library. Beehiiv newsletter integration with custom thank-you page. Profile picture and social assets.</p>
+            <p><strong>Days 3–4: First content week.</strong> Research brief, full article (1,400 words), Newsletter Issue #1, X thread (10 tweets), 3 Instagram visuals (1080×1080 PNG).</p>
+            <p><strong>Day 5: Distribution infrastructure.</strong> GitHub repo, Netlify auto-deploy, 3 affiliate programs activated.</p>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-header">
+              <span class="phase-number">W2</span>
+              <div>
+                <h3 class="phase-title">Week 2 — Business Systems Content</h3>
+                <span class="phase-cost">~8 hours</span>
+              </div>
+            </div>
+            <p>Second full content week: article on the $200/month business stack, newsletter, X thread (11 tweets), 3 more Instagram visuals, captions, posting brief.</p>
+            <p>Systems added: complete content pipeline documented in 4 slash commands for autonomous production. Content tracker initialized. Affiliate setup guide created.</p>
+            <p><strong>Week 2 was faster because the systems were already in place.</strong> That's the whole point.</p>
+          </div>
+
+          <h2>The 3 Decisions That Mattered Most</h2>
+
+          <div class="phase-block">
+            <div class="phase-header">
+              <span class="phase-number">01</span>
+              <div>
+                <h3 class="phase-title">GitHub auto-deploy instead of manual uploads</h3>
+              </div>
+            </div>
+            <p>The first deployment method was drag-and-drop zip files on Netlify. Every site change meant: modify → zip → upload → wait.</p>
+            <p>The problem became obvious by week 2: every update required manual intervention. That's not a system — that's a job.</p>
+            <p>The fix: GitHub repo + Netlify connected. Every <code>git push</code> deploys automatically. Zero manual steps. 45 minutes to set up. Permanent time save.</p>
+            <div class="article-callout">
+              <strong>The principle:</strong> Anything you do more than twice manually needs to be automated before you do it a third time.
+            </div>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-header">
+              <span class="phase-number">02</span>
+              <div>
+                <h3 class="phase-title">Content without a face</h3>
+              </div>
+            </div>
+            <p>No webcam. No face. No personal brand built around an individual's appearance. Deliberate choice, not a constraint.</p>
+            <p>The format: screen recordings + ElevenLabs AI voice narration. The result looks and sounds professional. The operator stays invisible. The brand doesn't depend on one person showing up consistently on camera.</p>
+            <p>The bet: the audience that matters doesn't care who you are. They care whether the system works and whether the information is useful.</p>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-header">
+              <span class="phase-number">03</span>
+              <div>
+                <h3 class="phase-title">Make.com over Zapier</h3>
+              </div>
+            </div>
+            <p>Make.com: $9/month for 10,000 operations. Zapier: $49/month for the same capability.</p>
+            <p>There's no meaningful trade-off here. Make.com is more powerful, better documented, and costs 5x less. The only reason anyone uses Zapier in 2025 is inertia.</p>
+          </div>
+
+          <h2>What Didn't Work</h2>
+
+          <p><strong>The Facebook banner.</strong> The SVG rendering pipeline only produces square thumbnails. A 820×312px SVG came out as 820×820 with content in the top 312 pixels. Multiple crop attempts failed because the default crop is center-aligned. After 30 minutes of failed workarounds: put the SVG in assets and screenshot it in the browser. Shipping beats perfect.</p>
+
+          <p><strong>First Netlify deployment.</strong> The first two drag-and-drop deploys took 1 second each and uploaded a fraction of the files silently. Pages returned 404. The fix was uploading a zip file — but this wasn't obvious until 20 minutes of debugging.</p>
+
+          <p><strong>Make.com affiliate page.</strong> The URL <code>make.com/en/affiliate-program</code> returned a 404. The program had moved. 10 minutes lost navigating to find it.</p>
+
+          <h2>The Numbers at Day 14</h2>
+
+          <table class="article-table">
+            <thead>
+              <tr><th>Metric</th><th>Week 1</th><th>Week 2</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Beehiiv subscribers</td><td>—</td><td>—</td></tr>
+              <tr><td>X impressions</td><td>—</td><td>—</td></tr>
+              <tr><td>Instagram reach</td><td>—</td><td>—</td></tr>
+              <tr><td>Affiliate clicks</td><td>0</td><td>—</td></tr>
+              <tr class="table-total"><td><strong>Revenue</strong></td><td><strong>$0</strong></td><td><strong>—</strong></td></tr>
+            </tbody>
+          </table>
+
+          <p>Revenue at zero is expected. The affiliate system wasn't live until end of week 2. Traffic is zero because the audience is zero. Both are normal at day 14 of a media company.</p>
+
+          <p>The only metric that matters right now: <strong>did content go out consistently, every week, without the system breaking?</strong> Yes.</p>
+
+          <h2>What Week 3 Looks Like</h2>
+
+          <ul>
+            <li>Post Week 2 content across all platforms</li>
+            <li>Build the first Gumroad digital product (AI Stack Guide, $27)</li>
+            <li>Add affiliate links to article #1 sidebar</li>
+            <li>Start Week 4 content production</li>
+          </ul>
+
+          <p>The goal isn't to go viral in week 3. It's to still be doing this in month 6 — when most people who "started a newsletter" in May have already quit.</p>
+
+          <p>Consistency compounds. The system makes consistency possible. The system was built before it was needed.</p>
+
+          <!-- Newsletter CTA -->
+          <div id="newsletter-cta" class="article-newsletter-cta">
+            <h3>Follow the build every week.</h3>
+            <p>Every Monday: what's working, what isn't, and the systems behind it. No fluff. Real numbers.</p>
+            <form class="cta-form" id="article-subscribe-form">
+              <input type="email" placeholder="your@email.com" required class="cta-input" />
+              <button type="submit" class="cta-btn">Join Free →</button>
+            </form>
+          </div>
+
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="article-sidebar">
+
+          <div class="sidebar-card">
+            <h4>The Full Stack</h4>
+            <ul class="sidebar-tools">
+              <li>
+                <a href="https://claude.ai" target="_blank" rel="noopener" class="sidebar-tool-link">
+                  <span class="sidebar-tool-name">Claude ↗</span>
+                  <span class="sidebar-tool-cost">$20</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.beehiiv.com/?via=v-maxime-thelemaque" target="_blank" rel="sponsored" class="sidebar-tool-link">
+                  <span class="sidebar-tool-name">Beehiiv ↗</span>
+                  <span class="sidebar-tool-cost">$0</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.make.com/en/register?pc=leveragedbuilder" target="_blank" rel="sponsored" class="sidebar-tool-link">
+                  <span class="sidebar-tool-name">Make.com ↗</span>
+                  <span class="sidebar-tool-cost">$9</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://try.elevenlabs.io/7zny95reeadp" target="_blank" rel="sponsored" class="sidebar-tool-link">
+                  <span class="sidebar-tool-name">ElevenLabs ↗</span>
+                  <span class="sidebar-tool-cost">$5</span>
+                </a>
+              </li>
+              <li>
+                <span class="sidebar-tool-name">GitHub + Netlify</span>
+                <span class="sidebar-tool-cost">$0</span>
+              </li>
+              <li class="sidebar-total">
+                <span class="sidebar-tool-name"><strong>Total</strong></span>
+                <span class="sidebar-tool-cost accent"><strong>$34/mo</strong></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>Build Log</h4>
+            <ul class="sidebar-toc">
+              <li><a href="#week1">Week 1 inventory</a></li>
+              <li><a href="#week2">Week 2 inventory</a></li>
+              <li><a href="#decisions">3 key decisions</a></li>
+              <li><a href="#failures">What didn't work</a></li>
+              <li><a href="#numbers">The real numbers</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card sidebar-newsletter">
+            <h4>Follow the build</h4>
+            <p>Weekly updates from inside The Leveraged Builder — numbers, systems, and what's next.</p>
+            <a href="/#newsletter" class="btn btn--sm">Join Free →</a>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="/" class="footer__logo">The <span>Leveraged</span> Builder</a>
+          <p>AI systems for solo operators.</p>
+        </div>
+        <nav class="footer__links">
+          <a href="blog.html">Articles</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="resources.html">Resources</a>
+          <a href="about.html">About</a>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 The Leveraged Builder · leveragedbuilder.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
