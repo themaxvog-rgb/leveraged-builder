@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0C0C0C"/>
+      <stop offset="100%" style="stop-color:#141414"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A1A"/>
+      <stop offset="100%" style="stop-color:#111111"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="720" fill="url(#bg)"/>
+
+  <!-- Grid lines subtle -->
+  <line x1="0" y1="360" x2="1280" y2="360" stroke="#1A1A1A" stroke-width="1"/>
+  <line x1="640" y1="0" x2="640" y2="720" stroke="#1A1A1A" stroke-width="1"/>
+
+  <!-- Yellow accent bar left -->
+  <rect x="80" y="180" width="6" height="360" fill="#D4FF00" rx="3"/>
+
+  <!-- Tag -->
+  <rect x="110" y="175" width="220" height="32" rx="16" fill="#D4FF00" fill-opacity="0.12"/>
+  <text x="220" y="197" font-family="'Courier New', monospace" font-size="13" font-weight="700" fill="#D4FF00" text-anchor="middle" letter-spacing="2">THE LEVERAGED BUILDER</text>
+
+  <!-- Main title -->
+  <text x="110" y="268" font-family="'Arial Black', 'Arial', sans-serif" font-size="62" font-weight="900" fill="#F2F2EE">The AI Stack</text>
+  <text x="110" y="344" font-family="'Arial Black', 'Arial', sans-serif" font-size="62" font-weight="900" fill="#D4FF00">Guide</text>
+
+  <!-- Subtitle -->
+  <text x="110" y="398" font-family="'Arial', sans-serif" font-size="22" fill="#888888">12 tools · 36 prompts · for solo operators</text>
+
+  <!-- Divider -->
+  <line x1="110" y1="430" x2="560" y2="430" stroke="#2A2A2A" stroke-width="1"/>
+
+  <!-- Features list -->
+  <text x="110" y="468" font-family="'Courier New', monospace" font-size="16" fill="#D4FF00">→</text>
+  <text x="136" y="468" font-family="'Arial', sans-serif" font-size="16" fill="#AAAAAA">Honest reviews with real monthly costs</text>
+
+  <text x="110" y="500" font-family="'Courier New', monospace" font-size="16" fill="#D4FF00">→</text>
+  <text x="136" y="500" font-family="'Arial', sans-serif" font-size="16" fill="#AAAAAA">3 copy-paste prompts per tool</text>
+
+  <text x="110" y="532" font-family="'Courier New', monospace" font-size="16" fill="#D4FF00">→</text>
+  <text x="136" y="532" font-family="'Arial', sans-serif" font-size="16" fill="#AAAAAA">Setup priority order — no wasted money</text>
+
+  <!-- Price badge -->
+  <rect x="110" y="565" width="120" height="50" rx="10" fill="#D4FF00"/>
+  <text x="170" y="597" font-family="'Arial Black', 'Arial', sans-serif" font-size="26" font-weight="900" fill="#0C0C0C" text-anchor="middle">$27</text>
+
+  <!-- Right side — tool cards mockup -->
+  <!-- Card 1 -->
+  <rect x="720" y="100" width="200" height="110" rx="12" fill="url(#cardGrad)" stroke="#2A2A2A" stroke-width="1"/>
+  <text x="750" y="138" font-family="'Arial', sans-serif" font-size="11" font-weight="700" fill="#D4FF00" letter-spacing="1">AI WRITING</text>
+  <text x="750" y="165" font-family="'Arial Black', 'Arial', sans-serif" font-size="20" font-weight="900" fill="#F2F2EE">Claude</text>
+  <rect x="750" y="182" width="60" height="14" rx="7" fill="#1E2A00"/>
+  <text x="780" y="193" font-family="'Courier New', monospace" font-size="10" fill="#D4FF00" text-anchor="middle">$20/mo</text>
+
+  <!-- Card 2 -->
+  <rect x="940" y="100" width="200" height="110" rx="12" fill="url(#cardGrad)" stroke="#2A2A2A" stroke-width="1"/>
+  <text x="970" y="138" font-family="'Arial', sans-serif" font-size="11" font-weight="700" fill="#D4FF00" letter-spacing="1">AUTOMATION</text>
+  <text x="970" y="165" font-family="'Arial Black', 'Arial', sans-serif" font-size="20" font-weight="900" fill="#F2F2EE">Make.com</text>
+  <rect x="970" y="182" width="55" height="14" rx="7" fill="#1E2A00"/>
+  <text x="997" y="193" font-family="'Courier New', monospace" font-size="10" fill="#D4FF00" text-anchor="middle">$9/mo</text>
+
+  <!-- Card 3 -->
+  <rect x="720" y="230" width="200" height="110" rx="12" fill="url(#cardGrad)" stroke="#2A2A2A" stroke-width="1"/>
+  <text x="750" y="268" font-family="'Arial', sans-serif" font-size="11" font-weight="700" fill="#D4FF00" letter-spacing="1">NEWSLETTER</text>
+  <text x="750" y="295" font-family="'Arial Black', 'Arial', sans-serif" font-size="20" font-weight="900" fill="#F2F2EE">Beehiiv</text>
+  <rect x="750" y="312" width="50" height="14" rx="7" fill="#1E2A00"/>
+  <text x="775" y="323" font-family="'Courier New', monospace" font-size="10" fill="#D4FF00" text-anchor="middle">$0/mo</text>
+
+  <!-- Card 4 -->
+  <rect x="940" y="230" width="200" height="110" rx="12" fill="url(#cardGrad)" stroke="#2A2A2A" stroke-width="1"/>
+  <text x="970" y="268" font-family="'Arial', sans-serif" font-size="11" font-weight="700" fill="#D4FF00" letter-spacing="1">AI VOICE</text>
+  <text x="970" y="295" font-family="'Arial Black', 'Arial', sans-serif" font-size="20" font-weight="900" fill="#F2F2EE">ElevenLabs</text>
+  <rect x="970" y="312" width="50" height="14" rx="7" fill="#1E2A00"/>
+  <text x="995" y="323" font-family="'Courier New', monospace" font-size="10" fill="#D4FF00" text-anchor="middle">$5/mo</text>
+
+  <!-- Card 5 -->
+  <rect x="720" y="360" width="200" height="110" rx="12" fill="url(#cardGrad)" stroke="#2A2A2A" stroke-width="1"/>
+  <text x="750" y="398" font-family="'Arial', sans-serif" font-size="11" font-weight="700" fill="#D4FF00" letter-spacing="1">RESEARCH</text>
+  <text x="750" y="425" font-family="'Arial Black', 'Arial', sans-serif" font-size="20" font-weight="900" fill="#F2F2EE">Perplexity</text>
+  <rect x="750" y="442" width="55" height="14" rx="7" fill="#1E2A00"/>
+  <text x="777" y="453" font-family="'Courier New', monospace" font-size="10" fill="#D4FF00" text-anchor="middle">$20/mo</text>
+
+  <!-- Card 6 -->
+  <rect x="940" y="360" width="200" height="110" rx="12" fill="url(#cardGrad)" stroke="#2A2A2A" stroke-width="1"/>
+  <text x="970" y="398" font-family="'Arial', sans-serif" font-size="11" font-weight="700" fill="#D4FF00" letter-spacing="1">VIDEO EDIT</text>
+  <text x="970" y="425" font-family="'Arial Black', 'Arial', sans-serif" font-size="20" font-weight="900" fill="#F2F2EE">Descript</text>
+  <rect x="970" y="442" width="55" height="14" rx="7" fill="#1E2A00"/>
+  <text x="997" y="453" font-family="'Courier New', monospace" font-size="10" fill="#D4FF00" text-anchor="middle">$12/mo</text>
+
+  <!-- Card 7 — highlighted -->
+  <rect x="720" y="490" width="200" height="110" rx="12" fill="#1A2200" stroke="#D4FF00" stroke-width="1.5"/>
+  <text x="750" y="528" font-family="'Arial', sans-serif" font-size="11" font-weight="700" fill="#D4FF00" letter-spacing="1">SCHEDULING</text>
+  <text x="750" y="555" font-family="'Arial Black', 'Arial', sans-serif" font-size="20" font-weight="900" fill="#F2F2EE">Buffer</text>
+  <rect x="750" y="572" width="50" height="14" rx="7" fill="#2A3A00"/>
+  <text x="775" y="583" font-family="'Courier New', monospace" font-size="10" fill="#D4FF00" text-anchor="middle">$6/mo</text>
+
+  <!-- Card 8 -->
+  <rect x="940" y="490" width="200" height="110" rx="12" fill="url(#cardGrad)" stroke="#2A2A2A" stroke-width="1"/>
+  <text x="970" y="528" font-family="'Arial', sans-serif" font-size="11" font-weight="700" fill="#D4FF00" letter-spacing="1">+ 5 MORE</text>
+  <text x="970" y="555" font-family="'Arial Black', 'Arial', sans-serif" font-size="20" font-weight="900" fill="#F2F2EE">Inside →</text>
+  <text x="970" y="580" font-family="'Arial', sans-serif" font-size="13" fill="#666666">Notion, Canva, Loom,</text>
+  <text x="970" y="597" font-family="'Arial', sans-serif" font-size="13" fill="#666666">Gumroad + wildcard</text>
+
+  <!-- Total cost footer -->
+  <rect x="720" y="620" width="420" height="50" rx="10" fill="#1A1A1A" stroke="#2A2A2A" stroke-width="1"/>
+  <text x="740" y="650" font-family="'Arial', sans-serif" font-size="14" fill="#666666">Full stack monthly cost:</text>
+  <text x="1120" y="650" font-family="'Courier New', monospace" font-size="18" font-weight="700" fill="#D4FF00" text-anchor="end">~$72/month</text>
+
+  <!-- Bottom URL -->
+  <text x="110" y="680" font-family="'Courier New', monospace" font-size="13" fill="#444444">leveragedbuilder.com</text>
+</svg>
