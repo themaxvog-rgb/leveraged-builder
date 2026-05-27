@@ -658,6 +658,62 @@ p  { color: var(--gray); line-height: 1.75; }
 }
 
 /* === PRODUCTS GRID === */
+/* === LIVE NUMBERS === */
+.section--live { background: var(--steel); }
+
+.live-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+.live-header h2 { margin-bottom: 8px; }
+.live-header p { color: var(--gray); font-size: 1rem; }
+
+.live-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.live-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+}
+.live-card__num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--yellow);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.03em;
+}
+.live-card__label {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.live-card__delta {
+  font-size: 0.75rem;
+  color: var(--gray);
+}
+
+.live-note {
+  margin-top: 20px;
+  font-size: 0.875rem;
+  color: var(--gray);
+  text-align: center;
+}
+.live-note a { color: var(--yellow); font-weight: 600; }
+.live-note a:hover { opacity: 0.8; }
+
+/* === PRODUCTS === */
 .products__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -679,6 +735,8 @@ p  { color: var(--gray); line-height: 1.75; }
   .footer__top { grid-template-columns: 1fr 1fr; gap: 40px; }
   .hero__stats { gap: 24px; }
   .products__grid { grid-template-columns: 1fr; }
+  .live-grid { grid-template-columns: 1fr 1fr; }
+  .live-header { flex-direction: column; gap: 20px; }
 }
 
 @media (max-width: 640px) {
@@ -715,6 +773,9 @@ p  { color: var(--gray); line-height: 1.75; }
   .about-strip { padding: 36px 20px; gap: 32px; }
   .pillar { padding: 24px; }
   .products__grid { grid-template-columns: 1fr; gap: 16px; }
+  .live-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .live-card { padding: 20px 18px; }
+  .live-card__num { font-size: 2rem; }
   .section-header { margin-bottom: 40px; }
   h2 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
 }

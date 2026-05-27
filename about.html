@@ -3,32 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — The Leveraged Builder</title>
-  <meta name="description" content="What is The Leveraged Builder, why it exists, and who it's for." />
+  <title>About Maxime — The Leveraged Builder</title>
+  <meta name="description" content="I'm Maxime Vogens. I run a marketing agency in São Paulo, I'm building a coaching program, and I'm documenting everything in public. Here's why." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230C0C0C'/><text y='.9em' font-size='80' x='10' fill='%23D4FF00' font-family='monospace' font-weight='bold'>LB</text></svg>" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .page-hero { padding: 160px 0 80px; }
-    .page-hero .eyebrow { display:inline-block;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px; }
-    .page-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 24px; }
-    .page-hero p { font-size: 1.125rem; max-width: 580px; }
-    .manifesto { max-width: 720px; }
-    .manifesto__block { margin-bottom: 48px; }
-    .manifesto__block h3 { color: var(--white); margin-bottom: 12px; font-size: 1.2rem; }
-    .manifesto__block p { font-size: 1.0625rem; line-height: 1.8; }
-    .manifesto__block .highlight { color: var(--yellow); font-weight: 600; }
-    .divider { width: 48px; height: 2px; background: var(--yellow); margin: 48px 0; }
-    .beliefs { list-style: none; display: flex; flex-direction: column; gap: 24px; margin-top: 32px; }
-    .beliefs li { display: flex; gap: 20px; padding: 24px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
-    .beliefs .num { font-family: var(--font-display); font-weight: 700; color: var(--yellow); font-size: 1.5rem; line-height: 1; min-width: 32px; }
-    .beliefs strong { color: var(--white); display: block; margin-bottom: 6px; font-family: var(--font-display); font-size: 1rem; }
-    .beliefs span { font-size: 0.9375rem; color: var(--gray); }
-    .cta-block { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 60px; text-align: center; margin-top: 80px; }
-    .cta-block h2 { margin-bottom: 16px; font-size: 2rem; }
-    .cta-block p { margin-bottom: 32px; }
-    .cta-block form { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .cta-block input { padding: 16px 20px; background: var(--steel); border: 1px solid var(--border); border-radius: 8px; color: var(--white); font-size: 0.9375rem; outline: none; min-width: 260px; transition: border-color 0.2s; }
-    .cta-block input:focus { border-color: var(--yellow); }
+    .about-hero { padding: 140px 0 80px; }
+    .about-hero__inner { display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: start; }
+    .about-hero__tag { display:inline-block;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px; }
+    .about-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); margin-bottom: 24px; }
+    .about-hero__lead { font-size: 1.125rem; line-height: 1.8; max-width: 560px; }
+
+    /* Founder card */
+    .founder-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; position: sticky; top: 100px; }
+    .founder-card__photo { background: linear-gradient(135deg, #1A2200 0%, #0C0C0C 100%); height: 200px; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); }
+    .founder-card__initials { font-family: var(--font-display); font-size: 4rem; font-weight: 900; color: var(--yellow); letter-spacing: -0.04em; }
+    .founder-card__body { padding: 28px; }
+    .founder-card__name { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--white); margin-bottom: 4px; }
+    .founder-card__title { font-size: 0.875rem; color: var(--gray); margin-bottom: 20px; }
+    .founder-card__stats { display: flex; flex-direction: column; gap: 12px; }
+    .founder-stat { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .founder-stat:last-child { border-bottom: none; }
+    .founder-stat__label { font-size: 0.8125rem; color: var(--gray); }
+    .founder-stat__value { font-family: var(--font-display); font-size: 0.875rem; font-weight: 700; color: var(--white); }
+    .founder-stat__value.accent { color: var(--yellow); }
+    .founder-card__links { padding: 20px 28px; border-top: 1px solid var(--border); display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* Story sections */
+    .story { max-width: 660px; }
+    .story-block { margin-bottom: 56px; }
+    .story-block__label { font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--yellow); margin-bottom: 14px; display: block; }
+    .story-block h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--white); margin-bottom: 18px; }
+    .story-block p { font-size: 1rem; line-height: 1.85; color: var(--gray); margin-bottom: 16px; }
+    .story-block p:last-child { margin-bottom: 0; }
+    .story-block .highlight { color: var(--white); font-weight: 500; }
+    .story-block .accent { color: var(--yellow); font-weight: 600; }
+    .story-divider { width: 40px; height: 2px; background: var(--border); margin: 48px 0; }
+
+    /* Stakes section */
+    .stakes { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 36px; margin: 40px 0; }
+    .stakes__title { font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--yellow); margin-bottom: 20px; }
+    .stakes__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .stake { text-align: center; }
+    .stake__num { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: var(--white); line-height: 1; }
+    .stake__num span { color: var(--yellow); }
+    .stake__label { font-size: 0.8125rem; color: var(--gray); margin-top: 6px; }
+
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 0; margin: 32px 0; }
+    .timeline-item { display: flex; gap: 20px; position: relative; padding-bottom: 32px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before { content: ''; position: absolute; left: 15px; top: 28px; bottom: 0; width: 1px; background: var(--border); }
+    .timeline-item:last-child::before { display: none; }
+    .timeline-dot { width: 32px; height: 32px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; color: var(--yellow); margin-top: 2px; }
+    .timeline-dot.active { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
+    .timeline-content strong { color: var(--white); display: block; margin-bottom: 4px; font-family: var(--font-display); font-size: 0.9375rem; }
+    .timeline-content span { font-size: 0.875rem; color: var(--gray); }
+
+    /* Beliefs */
+    .beliefs { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .beliefs li { display: flex; gap: 16px; padding: 20px 24px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; align-items: flex-start; }
+    .beliefs .num { font-family: var(--font-display); font-weight: 700; color: var(--yellow); font-size: 0.875rem; min-width: 24px; padding-top: 1px; }
+    .beliefs strong { color: var(--white); display: block; margin-bottom: 4px; font-family: var(--font-display); font-size: 0.9375rem; }
+    .beliefs span { font-size: 0.875rem; color: var(--gray); }
+
+    /* CTA */
+    .about-cta { background: var(--yellow); border-radius: 20px; padding: 60px 64px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; margin-top: 80px; }
+    .about-cta h2 { color: var(--black); font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 10px; }
+    .about-cta p { color: rgba(0,0,0,0.6); max-width: 440px; font-size: 1rem; }
+    .about-cta .btn { background: var(--black); color: var(--yellow); white-space: nowrap; }
+
+    @media (max-width: 900px) {
+      .about-hero__inner { grid-template-columns: 1fr; }
+      .founder-card { position: static; }
+      .stakes__grid { grid-template-columns: 1fr; gap: 16px; }
+      .about-cta { grid-template-columns: 1fr; padding: 40px 32px; }
+    }
+    @media (max-width: 640px) {
+      .about-hero { padding: 100px 0 48px; }
+      .about-cta { padding: 36px 24px; }
+    }
   </style>
 </head>
 <body>
@@ -38,102 +92,211 @@
       <div class="nav__inner">
         <a href="/" class="nav__logo">The <span>Leveraged</span> Builder</a>
         <ul class="nav__links">
-          <li><a href="/#content">Content</a></li>
+          <li><a href="blog.html">Articles</a></li>
           <li><a href="/#newsletter">Newsletter</a></li>
           <li><a href="resources.html">Resources</a></li>
           <li><a href="about.html" style="color:var(--white)">About</a></li>
         </ul>
-        <a href="/#newsletter" class="nav__cta">Join Free →</a>
+        <a href="https://leveragedbuilder.beehiiv.com/subscribe" target="_blank" class="nav__cta">Join Free →</a>
+        <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
 
-  <section class="page-hero">
+  <!-- HERO -->
+  <section class="about-hero">
     <div class="container">
-      <span class="eyebrow">About this project</span>
-      <h1>Why <span class="accent">The Leveraged Builder</span> exists.</h1>
-      <p>This isn't a personal brand. It's a thesis — tested in public, documented weekly, built to prove that AI changes everything for independent builders.</p>
+      <div class="about-hero__inner">
+        <div>
+          <span class="about-hero__tag">The founder</span>
+          <h1>I'm Maxime.<br>I'm building this <span class="accent">live.</span></h1>
+          <p class="about-hero__lead" style="color:var(--gray);">I run a marketing agency in São Paulo, I'm launching a business coaching program, and I'm documenting every system, decision, and number in public. Not because it's comfortable — because it's the most useful thing I can do for people trying to do the same.</p>
+        </div>
+
+        <!-- Founder Card -->
+        <div class="founder-card">
+          <div class="founder-card__photo">
+            <div class="founder-card__initials">MV</div>
+          </div>
+          <div class="founder-card__body">
+            <div class="founder-card__name">Maxime Vogens</div>
+            <div class="founder-card__title">Founder, The Leveraged Builder</div>
+            <div class="founder-card__stats">
+              <div class="founder-stat">
+                <span class="founder-stat__label">Location</span>
+                <span class="founder-stat__value">São Paulo, Brazil</span>
+              </div>
+              <div class="founder-stat">
+                <span class="founder-stat__label">Background</span>
+                <span class="founder-stat__value">Photographer → Agency owner</span>
+              </div>
+              <div class="founder-stat">
+                <span class="founder-stat__label">Current focus</span>
+                <span class="founder-stat__value">Agency + Coaching + Media</span>
+              </div>
+              <div class="founder-stat">
+                <span class="founder-stat__label">Deadline</span>
+                <span class="founder-stat__value accent">$1M before July 2027</span>
+              </div>
+            </div>
+          </div>
+          <div class="founder-card__links">
+            <a href="https://x.com/leveragedbuilder" target="_blank" class="btn btn--outline btn--sm" style="padding:8px 16px;font-size:0.8125rem;">X →</a>
+            <a href="https://leveragedbuilder.beehiiv.com/subscribe" target="_blank" class="btn btn--primary btn--sm" style="padding:8px 16px;font-size:0.8125rem;">Newsletter →</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- STORY -->
   <section class="section" style="padding-top:0">
     <div class="container">
-      <div class="manifesto fade-up">
+      <div class="story fade-up">
 
-        <div class="manifesto__block">
-          <h3>The problem we're solving</h3>
-          <p>Most business content falls into two traps. Either it's <span class="highlight">generic motivation</span> that tells you to "work harder" — or it's <span class="highlight">tech hype</span> that tells you AI will do everything without showing you how. Neither is useful. Neither shows you the actual system.</p>
+        <div class="story-block">
+          <span class="story-block__label">Where I started</span>
+          <h2>I was a photographer who learned to sell.</h2>
+          <p>I started with a camera and no business model. Photography led me into marketing — understanding how brands communicate, how visuals drive decisions, how attention is the real currency. That turned into running campaigns, then managing brands, then building systems for clients who had no idea what they were doing online.</p>
+          <p>Eventually I built an agency. Brand management, video production, corporate clients in Brazil. Good revenue. Good work. But a model that required my constant presence to function — which meant it didn't scale, it just moved.</p>
         </div>
 
-        <div class="divider"></div>
+        <div class="story-divider"></div>
 
-        <div class="manifesto__block">
-          <h3>What this actually is</h3>
-          <p>The Leveraged Builder is a media company built on one bet: <span class="highlight">the next generation of successful entrepreneurs will be AI-native operators.</span> Not people who use AI as a shortcut, but people who build their entire business infrastructure around it.</p>
-          <p style="margin-top:16px;">Every week, we document what that looks like in practice. Real tools. Real workflows. Real numbers from a business being built in public — from São Paulo, for a global audience.</p>
+        <div class="story-block">
+          <span class="story-block__label">The turning point</span>
+          <h2>AI didn't save me time. It changed what I was building.</h2>
+          <p>When I started using AI seriously — not as a gimmick, but as infrastructure — something shifted. Not "I write emails faster now." More like: <span class="highlight">I can design systems that produce output without me in them.</span> The agency started running on workflows instead of hours.</p>
+          <p>That's when I made the bet. I'm building three things simultaneously: the agency (to fund everything), a business coaching program (to help people make the same shift I did), and this media brand — to document the whole thing, live, in public.</p>
+
+          <div class="stakes">
+            <div class="stakes__title">The current build — real numbers</div>
+            <div class="stakes__grid">
+              <div class="stake">
+                <div class="stake__num">3<span>x</span></div>
+                <div class="stake__label">Active ventures running in parallel</div>
+              </div>
+              <div class="stake">
+                <div class="stake__num">$<span>1M</span></div>
+                <div class="stake__label">Target before July 2027</div>
+              </div>
+              <div class="stake">
+                <div class="stake__num">100<span>%</span></div>
+                <div class="stake__label">Documented in public</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="divider"></div>
+        <div class="story-divider"></div>
 
-        <div class="manifesto__block">
-          <h3>Who this is for</h3>
-          <p>You're ambitious. You're already working — maybe in a job you want to escape, maybe in a freelance career that's hit a ceiling, maybe in an early-stage business that's not moving fast enough. You know AI is changing the rules. You just want someone to show you <span class="highlight">exactly how to use it to build something real.</span></p>
+        <div class="story-block">
+          <span class="story-block__label">Why build in public</span>
+          <h2>The most useful thing I can do is show the real process.</h2>
+          <p>Most business content is written in retrospect by people who've already won. They smooth out the failures, compress the timeline, and package it into a neat framework. <span class="highlight">That's not useful to someone in the middle of building.</span></p>
+          <p>The Leveraged Builder exists to be the resource I wish I had. Not "here's how someone made $10M eventually" — but <span class="accent">"here's what week 4 actually looked like, with the exact numbers, the mistakes, and the system I used."</span></p>
+          <p>I have real stakes. Real deadlines. Real failures. And I'm documenting all of it.</p>
         </div>
 
-        <div class="divider"></div>
+        <div class="story-divider"></div>
 
-        <h3 style="color:var(--white);margin-bottom:24px;">What we believe</h3>
-        <ul class="beliefs">
-          <li>
-            <span class="num">01</span>
-            <div>
-              <strong>AI is infrastructure, not a shortcut</strong>
-              <span>The people winning with AI aren't using it to do tasks faster. They're using it to build systems that eliminate the tasks entirely.</span>
+        <div class="story-block">
+          <span class="story-block__label">The roadmap</span>
+          <h2>Where this is going.</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot active">✓</div>
+              <div class="timeline-content">
+                <strong>Phase 1 — Foundation (Done)</strong>
+                <span>Site live. Newsletter running. First product ($27 guide). First articles published.</span>
+              </div>
             </div>
-          </li>
-          <li>
-            <span class="num">02</span>
-            <div>
-              <strong>Systems beat hustle. Always.</strong>
-              <span>A well-designed system running 24/7 produces more than any individual effort. The goal is to become the architect, not the worker.</span>
+            <div class="timeline-item">
+              <div class="timeline-dot active">→</div>
+              <div class="timeline-content">
+                <strong>Phase 2 — Audience (Now)</strong>
+                <span>Reach 1,000 subscribers. Publish 3x/week. Launch coaching program. Build in public weekly.</span>
+              </div>
             </div>
-          </li>
-          <li>
-            <span class="num">03</span>
-            <div>
-              <strong>Location is no longer a constraint</strong>
-              <span>The best opportunities are borderless. Where you live should determine your lifestyle, not your income ceiling.</span>
+            <div class="timeline-item">
+              <div class="timeline-dot">3</div>
+              <div class="timeline-content">
+                <strong>Phase 3 — Monetization</strong>
+                <span>First sponsorship deals (1k+ list). Full coaching cohort. Premium templates. Community.</span>
+              </div>
             </div>
-          </li>
-          <li>
-            <span class="num">04</span>
-            <div>
-              <strong>Transparency builds better audiences</strong>
-              <span>The most valuable content is the one that shows the real process — including the mistakes. We build in public because it's more useful and more honest.</span>
+            <div class="timeline-item">
+              <div class="timeline-dot">4</div>
+              <div class="timeline-content">
+                <strong>Phase 4 — Scale</strong>
+                <span>Agency runs without me. Media brand self-sustaining. $10k+/month across all streams.</span>
+              </div>
             </div>
-          </li>
-          <li>
-            <span class="num">05</span>
-            <div>
-              <strong>Small teams are a competitive advantage</strong>
-              <span>With AI, a two-person operation can outperform a ten-person team. Lean is fast. Fast wins.</span>
-            </div>
-          </li>
-        </ul>
+          </div>
+        </div>
+
+        <div class="story-divider"></div>
+
+        <div class="story-block">
+          <span class="story-block__label">What I believe</span>
+          <h2>The operating principles.</h2>
+          <ul class="beliefs">
+            <li>
+              <span class="num">01</span>
+              <div>
+                <strong>AI is infrastructure, not a shortcut</strong>
+                <span>The people winning aren't using AI to do tasks faster. They're using it to eliminate entire categories of work from their week.</span>
+              </div>
+            </li>
+            <li>
+              <span class="num">02</span>
+              <div>
+                <strong>One person with systems beats a team without them</strong>
+                <span>Scale isn't about headcount. It's about how many outputs your systems produce per hour you actually work.</span>
+              </div>
+            </li>
+            <li>
+              <span class="num">03</span>
+              <div>
+                <strong>Where you live is a choice, not a ceiling</strong>
+                <span>São Paulo to New York, I'm building for a global market. Geography should determine your lifestyle, not your income.</span>
+              </div>
+            </li>
+            <li>
+              <span class="num">04</span>
+              <div>
+                <strong>Transparency compounds</strong>
+                <span>The most valuable audience is built on trust. Real numbers, real failures, real process. No polish, no pretense.</span>
+              </div>
+            </li>
+            <li>
+              <span class="num">05</span>
+              <div>
+                <strong>Deadlines make everything real</strong>
+                <span>I have one: $1 million before I turn 30 in July 2027. Everything I do either moves toward that or it doesn't.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
       </div>
 
-      <div class="cta-block fade-up">
-        <h2>Start with the <span class="accent">free AI Stack.</span></h2>
-        <p>The exact 12 tools powering this operation — with costs, use cases, and the priority order to set them up.</p>
-        <a href="https://leveragedbuilder.beehiiv.com/subscribe" target="_blank" class="btn btn--primary">Get it free →</a>
+      <!-- CTA -->
+      <div class="about-cta fade-up">
+        <div>
+          <h2>Follow the build as it happens.</h2>
+          <p>Every Monday: one system, one honest update, one number from the build. Free. No fluff. Exactly what's working right now.</p>
+        </div>
+        <a href="https://leveragedbuilder.beehiiv.com/subscribe" target="_blank" class="btn">Join Free →</a>
       </div>
+
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
       <div class="footer__bottom" style="border-top:1px solid var(--border);padding-top:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;">
-        <p class="footer__copy">© 2025 The Leveraged Builder.</p>
+        <p class="footer__copy">© 2026 The Leveraged Builder.</p>
         <a href="/" style="font-size:0.875rem;color:var(--gray);">← Back to home</a>
       </div>
     </div>
