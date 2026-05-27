@@ -22,17 +22,29 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 // Hamburger menu
 const hamburger = document.querySelector('.nav__hamburger');
 const navLinks = document.querySelector('.nav__links');
-if (hamburger) {
+if (hamburger && navLinks) {
   hamburger.addEventListener('click', () => {
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    navLinks.style.flexDirection = 'column';
-    navLinks.style.position = 'absolute';
-    navLinks.style.top = '70px';
-    navLinks.style.left = '0';
-    navLinks.style.right = '0';
-    navLinks.style.background = 'var(--black)';
-    navLinks.style.padding = '24px';
-    navLinks.style.borderBottom = '1px solid var(--border)';
+    navLinks.classList.toggle('open');
+    const isOpen = navLinks.classList.contains('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    // Animate bars
+    const bars = hamburger.querySelectorAll('span');
+    if (isOpen) {
+      bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      bars[1].style.opacity = '0';
+      bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      bars[0].style.transform = '';
+      bars[1].style.opacity = '';
+      bars[2].style.transform = '';
+    }
+  });
+  // Close menu on link click
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.querySelectorAll('span').forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
+    });
   });
 }
 
