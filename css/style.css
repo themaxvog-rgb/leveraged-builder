@@ -739,7 +739,7 @@ p  { color: var(--gray); line-height: 1.75; }
   .live-header { flex-direction: column; gap: 20px; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .container { padding: 0 16px; }
   .section { padding: 56px 0; }
   .section--sm { padding: 40px 0; }
