@@ -46,7 +46,7 @@
 
   <!-- Price badge -->
   <rect x="110" y="565" width="120" height="50" rx="10" fill="#D4FF00"/>
-  <text x="170" y="597" font-family="'Arial Black', 'Arial', sans-serif" font-size="26" font-weight="900" fill="#0C0C0C" text-anchor="middle">$27</text>
+  <text x="170" y="597" font-family="'Arial Black', 'Arial', sans-serif" font-size="26" font-weight="900" fill="#0C0C0C" text-anchor="middle">$47</text>
 
   <!-- Right side — tool cards mockup -->
   <!-- Card 1 -->
