@@ -1077,14 +1077,149 @@ p  { color: var(--gray); line-height: 1.75; }
 .sidebar-newsletter p { font-size: 0.875rem; color: var(--gray); margin-bottom: 16px; }
 
 /* === ANIMATIONS === */
+
+/* --- Scroll Reveals --- */
 .fade-up {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
-.fade-up:nth-child(2) { transition-delay: 0.1s; }
-.fade-up:nth-child(3) { transition-delay: 0.2s; }
+.fade-in.visible { opacity: 1; }
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.slide-left.visible { opacity: 1; transform: translateX(0); }
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.slide-right.visible { opacity: 1; transform: translateX(0); }
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scale-in.visible { opacity: 1; transform: scale(1); }
+
+/* --- Stagger delays --- */
+.fade-up:nth-child(1), .scale-in:nth-child(1) { transition-delay: 0.05s; }
+.fade-up:nth-child(2), .scale-in:nth-child(2) { transition-delay: 0.12s; }
+.fade-up:nth-child(3), .scale-in:nth-child(3) { transition-delay: 0.19s; }
+.fade-up:nth-child(4), .scale-in:nth-child(4) { transition-delay: 0.26s; }
+.fade-up:nth-child(5), .scale-in:nth-child(5) { transition-delay: 0.33s; }
+.fade-up:nth-child(6), .scale-in:nth-child(6) { transition-delay: 0.40s; }
+
+/* --- Hero entrance --- */
+@keyframes heroLine {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero__eyebrow  { animation: heroLine 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
+.hero__headline .line:nth-child(1) { display: block; animation: heroLine 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
+.hero__headline .line:nth-child(2) { display: block; animation: heroLine 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both; }
+.hero__headline .line:nth-child(3) { display: block; animation: heroLine 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.44s both; }
+.hero__sub  { animation: heroLine 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.56s both; }
+.hero__form { animation: heroLine 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.66s both; }
+.hero__micro { animation: heroLine 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.72s both; }
+.hero__stats { animation: heroLine 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.80s both; }
+
+/* --- Card glow on hover --- */
+.card-glow {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease !important;
+}
+.card-glow:hover {
+  border-color: rgba(212, 255, 0, 0.25) !important;
+  box-shadow: 0 0 32px rgba(212, 255, 0, 0.07), 0 8px 32px rgba(0,0,0,0.4) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* --- Button press micro-interaction --- */
+.btn {
+  transition: opacity 0.2s, transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s !important;
+}
+.btn--primary:hover {
+  opacity: 1 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 24px rgba(212, 255, 0, 0.25) !important;
+}
+.btn--primary:active { transform: translateY(0) scale(0.97) !important; }
+.btn--secondary:hover { transform: translateY(-2px) !important; }
+
+/* --- Yellow underline on nav links --- */
+.nav__links a {
+  position: relative;
+}
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--yellow);
+  transition: width 0.25s ease;
+}
+.nav__links a:hover::after { width: 100%; }
+
+/* --- Counter number pop --- */
+@keyframes countPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.counter-pop { animation: countPop 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* --- Pulse for live dot --- */
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 255, 0, 0.5); }
+  50%       { box-shadow: 0 0 0 6px rgba(212, 255, 0, 0); }
+}
+.live-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: var(--yellow);
+  border-radius: 50%;
+  animation: pulseDot 2s ease-in-out infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* --- Cursor glow --- */
+#cursor-glow {
+  position: fixed;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,255,0,0.035) 0%, transparent 65%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: opacity 0.4s;
+  will-change: left, top;
+}
+
+/* --- Reduced motion overrides --- */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .fade-in, .slide-left, .slide-right, .scale-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero__eyebrow, .hero__headline .line,
+  .hero__sub, .hero__form, .hero__micro, .hero__stats {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  #cursor-glow { display: none; }
+  .btn--primary:hover, .btn--secondary:hover { transform: none !important; }
+}
